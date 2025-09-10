@@ -31,3 +31,17 @@ class JWTBearer(HTTPBearer):
         except JWTError as e:
             print("❌ JWT verification failed:", str(e))
             return False
+        
+async def get_current_user(token: str = Depends(JWTBearer())):
+    try:
+        payload = jwt.decode(token, SECRET_KEY, algorithms=[ALGORITHM])
+        print("✅ get_current_user → Payload:", payload)
+
+        return {
+            "user_id": payload.get("user_id"),
+            "role": payload.get("role"),
+        }
+
+    except JWTError as e:
+        print("❌ get_current_user → JWT decode failed:", str(e))
+        raise HTTPException(status_code=403, detail="Invalid or expired token")
