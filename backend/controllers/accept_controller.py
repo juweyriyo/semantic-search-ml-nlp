@@ -7,3 +7,8 @@ model = SentenceTransformer('sentence-transformers/all-MiniLM-L6-v2')  # ✅ Loa
 
 async def accept_project_controller(group_id: str):
     print("📥 Received group_id:", group_id)
+
+    # ✅ Find group using group_number (not _id)
+    group = register_col.find_one({"group_number": group_id})
+    if not group:
+        raise Exception("❌ Group not found")
