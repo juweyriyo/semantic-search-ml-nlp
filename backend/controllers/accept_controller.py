@@ -12,3 +12,8 @@ async def accept_project_controller(group_id: str):
     group = register_col.find_one({"group_number": group_id})
     if not group:
         raise Exception("❌ Group not found")
+    
+    # ✅ Use existing vector or generate new
+    vector = group.get("vector")
+    if not vector or len(vector) != 384:
+        vector = model.encode(group["title"]).tolist()
