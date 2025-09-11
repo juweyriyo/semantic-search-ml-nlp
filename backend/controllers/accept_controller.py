@@ -33,3 +33,6 @@ async def accept_project_controller(group_id: str):
         "vector": vector,
     }
     collection.insert_one(project_doc)
+
+    # ✅ Update status to accepted
+    register_col.update_one({"group_number": group_id}, {"$set": {"status": "accepted"}})
