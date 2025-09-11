@@ -18,3 +18,18 @@ def create_note(note: NoteCreate):
         "timestamp": datetime.now()
     })
     return {"msg": "Note saved"}
+
+def update_note(note_id: str, update: NoteUpdate):
+    res = notebook_col.update_one(
+        {"_id": ObjectId(note_id)},
+        {"$set": {"note": update.note}}
+    )
+    if res.modified_count == 0:
+        raise HTTPException(status_code=404, detail="Note not found")
+    return {"msg": "Note updated"}
+
+def delete_note(note_id: str):
+    res = notebook_col.delete_one({"_id": ObjectId(note_id)})
+    if res.deleted_count == 0:
+        raise HTTPException(status_code=404, detail="Note not found")
+    return {"msg": "Note deleted"}
