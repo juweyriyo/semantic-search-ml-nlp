@@ -10,3 +10,11 @@ def get_notes_by_student(student_id: str):
         {"id": str(note["_id"]), "note": note["note"], "timestamp": note["timestamp"]}
         for note in notes
     ]
+
+def create_note(note: NoteCreate):
+    notebook_col.insert_one({
+        "student_id": note.student_id,
+        "note": note.note,
+        "timestamp": datetime.now()
+    })
+    return {"msg": "Note saved"}
