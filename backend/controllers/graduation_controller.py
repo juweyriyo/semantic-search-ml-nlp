@@ -7,3 +7,6 @@ def register_graduate(data: Graduate):
         raise HTTPException(status_code=400, detail="Graduate already exists.")
     graduates_col.insert_one(data.dict())
     return {"message": "Graduate registered successfully."}
+
+def get_all_graduates():
+    return list(graduates_col.find({}, {"_id": 0}))
