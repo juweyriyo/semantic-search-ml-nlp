@@ -36,3 +36,11 @@ async def accept_project_controller(group_id: str):
 
     # ✅ Update status to accepted
     register_col.update_one({"group_number": group_id}, {"$set": {"status": "accepted"}})
+
+    # ✅ Delete other pending in same group
+    register_col.delete_many({
+        "group_number": group["group_number"],
+        "_id": {"$ne": group["_id"]}
+    })
+
+    return {"success": True, "project_id": new_id}
