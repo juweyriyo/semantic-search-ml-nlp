@@ -22,3 +22,14 @@ async def accept_project_controller(group_id: str):
     last = collection.find_one(sort=[("id", -1)])
     last_id = int(last["id"].replace("TH", "")) if last else 0
     new_id = f"TH{str(last_id + 1).zfill(3)}"
+
+    # ✅ Insert into `projects`
+    project_doc = {
+        "id": new_id,
+        "title": group["title"],
+        "cleaned_title": clean_text(group["title"]),
+        "category": group["area"],
+        "year": group["year"],
+        "vector": vector,
+    }
+    collection.insert_one(project_doc)
