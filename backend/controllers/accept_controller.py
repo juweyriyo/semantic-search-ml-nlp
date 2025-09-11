@@ -17,3 +17,8 @@ async def accept_project_controller(group_id: str):
     vector = group.get("vector")
     if not vector or len(vector) != 384:
         vector = model.encode(group["title"]).tolist()
+
+    # ✅ Generate new project ID
+    last = collection.find_one(sort=[("id", -1)])
+    last_id = int(last["id"].replace("TH", "")) if last else 0
+    new_id = f"TH{str(last_id + 1).zfill(3)}"
