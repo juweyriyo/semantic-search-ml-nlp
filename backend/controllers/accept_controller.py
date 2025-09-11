@@ -3,3 +3,5 @@ from backend.auth.utils import clean_text
 from backend.db.connection import register_col, collection
 from bson import ObjectId
 
+model = SentenceTransformer('sentence-transformers/all-MiniLM-L6-v2')  # ✅ Load once globally
+
