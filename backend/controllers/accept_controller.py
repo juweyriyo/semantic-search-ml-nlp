@@ -5,3 +5,5 @@ from bson import ObjectId
 
 model = SentenceTransformer('sentence-transformers/all-MiniLM-L6-v2')  # ✅ Load once globally
 
+async def accept_project_controller(group_id: str):
+    print("📥 Received group_id:", group_id)
