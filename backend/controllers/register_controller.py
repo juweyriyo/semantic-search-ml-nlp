@@ -5,3 +5,8 @@ from fastapi.encoders import jsonable_encoder
 
 
 async def register_project_controller(data: RegisterModel):
+    # ✅ Only allow graduates from the correct year
+    allowed_ids = [
+        grad["student_id"].strip().upper()
+        for grad in graduates_col.find({"graduation_year": data.year})
+    ]
