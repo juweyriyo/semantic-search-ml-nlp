@@ -17,3 +17,11 @@ async def register_project_controller(data: RegisterModel):
                 status_code=400,
                 detail=f"Student ID {sid} is not eligible for graduation year {data.year}",
             )
+        
+    # ✅ ❌ Allow multiple submissions — but block if one is already accepted
+        existing = list(register_col.find({"student_ids": sid}))
+        if any(sub.get("status") == "accepted" for sub in existing):
+            raise HTTPException(
+                status_code=400,
+                detail=f"Student ID {sid} already has an accepted project title.",
+            )
