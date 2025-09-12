@@ -25,3 +25,8 @@ async def register_project_controller(data: RegisterModel):
                 status_code=400,
                 detail=f"Student ID {sid} already has an accepted project title.",
             )
+        
+    # ✅ Insert this new (pending) title
+    encoded_data = jsonable_encoder(data)
+    register_col.insert_one(encoded_data)
+    return {"message": "🎉 Project registered successfully"} 
