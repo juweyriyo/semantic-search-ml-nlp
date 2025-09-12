@@ -10,3 +10,10 @@ async def register_project_controller(data: RegisterModel):
         grad["student_id"].strip().upper()
         for grad in graduates_col.find({"graduation_year": data.year})
     ]
+
+    for sid in data.student_ids:
+        if sid.strip().upper() not in allowed_ids:
+            raise HTTPException(
+                status_code=400,
+                detail=f"Student ID {sid} is not eligible for graduation year {data.year}",
+            )
