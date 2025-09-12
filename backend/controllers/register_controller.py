@@ -4,3 +4,4 @@ from backend.db.connection import register_col, graduates_col
 from fastapi.encoders import jsonable_encoder
 
 
+async def register_project_controller(data: RegisterModel):
