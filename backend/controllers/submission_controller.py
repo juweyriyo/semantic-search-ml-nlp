@@ -6,3 +6,9 @@ def get_all_submissions_grouped():
     data = list(register_col.find({}, {"_id": 0}))
     if not data:
         return {}
+    
+    grouped = {}
+    for entry in data:
+        group = entry["group_number"]
+        grouped.setdefault(group, []).append(entry)
+    return grouped
