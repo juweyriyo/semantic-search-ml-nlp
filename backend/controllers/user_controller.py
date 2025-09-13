@@ -22,3 +22,9 @@ def login_user(user_id: str, password: str):
 
     if not user or not verify_password(password, user["password"]):
         raise HTTPException(status_code=401, detail="Invalid ID or password")
+    
+    token = create_access_token({
+        "user_id": user["ID"],
+        "role": user["role"],
+        "name": user["name"]
+    })
