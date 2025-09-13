@@ -13,3 +13,6 @@ def register_user(user: User):
         "password": hash_password(user.password),
         "role": user.role
     }
+
+    user_collection.insert_one(new_user)
+    return {"message": "User created successfully"}
