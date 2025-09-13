@@ -16,3 +16,6 @@ def register_user(user: User):
 
     user_collection.insert_one(new_user)
     return {"message": "User created successfully"}
+
+def login_user(user_id: str, password: str):
+    user = user_collection.find_one({"ID": user_id})
