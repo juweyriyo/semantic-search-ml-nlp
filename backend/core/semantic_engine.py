@@ -20,3 +20,8 @@ def load_documents():
 
 # 🟢 Auto-load markaa file-ka la import-gareeyo
 load_documents()
+
+def search_titles(query: str, top_k=5, threshold=0.5):
+    if vectors is None or len(docs) == 0:
+        print("❌ No vectors loaded.")
+        return []
