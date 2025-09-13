@@ -43,3 +43,6 @@ def search_titles(query: str, top_k=5, threshold=0.5):
         for i in range(len(scores))
         if float(scores[i]) >= threshold
     ]
+
+    # ✅ Sort by score DESC
+    filtered.sort(key=lambda x: x["score"], reverse=True)
