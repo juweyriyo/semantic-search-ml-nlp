@@ -17,3 +17,6 @@ def load_documents():
     print("✅ Total documents:", len(docs_raw))
     print("✅ Valid vectors:", len(docs))
     print("✅ Vectors shape:", vectors.shape)
+
+# 🟢 Auto-load markaa file-ka la import-gareeyo
+load_documents()
