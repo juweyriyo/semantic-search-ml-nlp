@@ -31,3 +31,15 @@ def search_titles(query: str, top_k=5, threshold=0.5):
     print("🔍 DB vector shape:", vectors.shape)
 
     scores = util.cos_sim(query_vec, vectors)[0]
+
+    # ✅ Extract all matches above threshold
+    filtered = [
+        {
+            "title": docs[i]["title"],
+            "year": docs[i].get("year", "Unknown"),
+            "category": docs[i].get("category", "Unknown"),
+            "score": float(scores[i])
+        }
+        for i in range(len(scores))
+        if float(scores[i]) >= threshold
+    ]
