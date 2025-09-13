@@ -28,3 +28,12 @@ def login_user(user_id: str, password: str):
         "role": user["role"],
         "name": user["name"]
     })
+
+    return {
+        "token": token,
+        "user": {
+            "id": user["ID"],
+            "name": user["name"],
+            "role": user["role"]
+        }
+    }
