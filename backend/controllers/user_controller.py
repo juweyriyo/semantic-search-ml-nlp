@@ -19,3 +19,6 @@ def register_user(user: User):
 
 def login_user(user_id: str, password: str):
     user = user_collection.find_one({"ID": user_id})
+
+    if not user or not verify_password(password, user["password"]):
+        raise HTTPException(status_code=401, detail="Invalid ID or password")
