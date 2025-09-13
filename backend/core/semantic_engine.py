@@ -25,3 +25,9 @@ def search_titles(query: str, top_k=5, threshold=0.5):
     if vectors is None or len(docs) == 0:
         print("❌ No vectors loaded.")
         return []
+    
+    query_vec = model.encode(query)
+    print("🔍 Query shape:", query_vec.shape)
+    print("🔍 DB vector shape:", vectors.shape)
+
+    scores = util.cos_sim(query_vec, vectors)[0]
