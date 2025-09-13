@@ -1,0 +1,39 @@
+from fastapi import HTTPException
+from backend.auth.utils import hash_password, verify_password, create_access_token
+from backend.models.user import User
+from backend.db.connection import user_collection
+
+def register_user(user: User):
+    if user_collection.find_one({"ID": user.id}):
+        raise HTTPException(status_code=400, detail="User already exists")
+    
+    new_user = {
+        "ID": user.id,
+        "name": user.name,
+        "password": hash_password(user.password),
+        "role": user.role
+    }
+
+    user_collection.insert_one(new_user)
+    return {"message": "User created successfully"}
+
+def login_user(user_id: str, password: str):
+    user = user_collection.find_one({"ID": user_id})
+
+    if not user or not verify_password(password, user["password"]):
+        raise HTTPException(status_code=401, detail="Invalid ID or password")
+    
+    token = create_access_token({
+        "user_id": user["ID"],
+        "role": user["role"],
+        "name": user["name"]
+    })
+
+    return {
+        "token": token,
+        "user": {
+            "id": user["ID"],
+            "name": user["name"],
+            "role": user["role"]
+        }
+    }
