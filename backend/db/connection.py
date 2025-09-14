@@ -21,3 +21,7 @@ user_collection = db["users"]
 graduates_col = db["graduates"]
 register_col = db["registersTitle"]
 notebook_col = db["notebookStd"]
+
+# ✅ Debug print
+print("DB Name:", db.name)
+print("Collections:", db.list_collection_names())
