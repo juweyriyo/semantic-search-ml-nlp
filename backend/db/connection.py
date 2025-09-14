@@ -33,3 +33,7 @@ def get_project_titles():
 
 def get_sample_doc():
     return collection.find_one()
+
+# ✅ Users functions
+def get_sample_user():
+    return user_collection.find_one()
