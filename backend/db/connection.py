@@ -14,3 +14,10 @@ print("MONGO_URI:", os.getenv("MONGO_URI"))
 
 # ✅ Select database
 db = client["semantic"]
+
+# ✅ Select collections
+collection = db["projects"]
+user_collection = db["users"]
+graduates_col = db["graduates"]
+register_col = db["registersTitle"]
+notebook_col = db["notebookStd"]
