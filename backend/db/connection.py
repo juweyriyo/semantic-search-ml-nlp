@@ -41,3 +41,7 @@ def get_sample_user():
 # ✅ Graduates functions
 def get_sample_graduate():
     return graduates_col.find_one()
+
+# ✅ Register functions
+def get_sample_register():
+    return register_col.find_one()
