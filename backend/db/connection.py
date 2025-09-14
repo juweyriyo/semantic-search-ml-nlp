@@ -11,3 +11,6 @@ load_dotenv(dotenv_path="./backend/.env")
 client = MongoClient(os.getenv("MONGO_URI"))
 # print("url",client)
 print("MONGO_URI:", os.getenv("MONGO_URI"))
+
+# ✅ Select database
+db = client["semantic"]
