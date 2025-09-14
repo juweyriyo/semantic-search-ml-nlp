@@ -45,3 +45,7 @@ def get_sample_graduate():
 # ✅ Register functions
 def get_sample_register():
     return register_col.find_one()
+
+# ✅ Notebook functions
+def get_sample_notebook():
+    return notebook_col.find_one()
