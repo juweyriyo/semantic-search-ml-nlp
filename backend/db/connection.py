@@ -37,3 +37,7 @@ def get_sample_doc():
 # ✅ Users functions
 def get_sample_user():
     return user_collection.find_one()
+
+# ✅ Graduates functions
+def get_sample_graduate():
+    return graduates_col.find_one()
