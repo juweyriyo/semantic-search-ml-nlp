@@ -25,3 +25,11 @@ notebook_col = db["notebookStd"]
 # ✅ Debug print
 print("DB Name:", db.name)
 print("Collections:", db.list_collection_names())
+
+# ✅ Project functions
+def get_project_titles():
+    docs = collection.find({}, {"_id": 0, "Title": 1})
+    return [doc["Title"] for doc in docs]
+
+def get_sample_doc():
+    return collection.find_one()
