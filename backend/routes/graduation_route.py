@@ -18,3 +18,10 @@ def get_all():
 @router.put("/update-graduate/{student_id}")
 def update(student_id: str, data: Graduate):
     return graduation_controller.update_graduate(student_id, data)
+
+@router.delete("/delete-graduate/{user_id}")
+def delete_user(user_id: str):
+    result = graduates_col.delete_one({"ID": user_id})
+    if result.deleted_count == 0:
+        raise HTTPException(status_code=404, detail="User not found")
+    return {"message": "User deleted"}
