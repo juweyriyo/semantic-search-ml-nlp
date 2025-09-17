@@ -10,3 +10,8 @@ router = APIRouter()
 @router.post("/register-user")
 def create_user(user: User):
     return register_user(user)
+
+@router.get("/users")
+def get_all_users():
+    users = list(user_collection.find({}, {"_id": 0, "password": 0}))
+    return users
