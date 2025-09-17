@@ -15,3 +15,7 @@ def create_note(note: NoteCreate):
 @router.put("/{note_id}")
 def update_note(note_id: str, note: NoteUpdate):
     return ctrl.update_note(note_id, note)
+
+@router.delete("/{note_id}")
+def delete_note(note_id: str):
+    return ctrl.delete_note(note_id)
