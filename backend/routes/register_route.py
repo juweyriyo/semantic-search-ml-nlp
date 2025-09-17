@@ -49,3 +49,21 @@ async def check_graduate_eligibility(student_id: str):
         )
 
     return {"eligible": True, "graduation_year": grad_year}
+
+#  Get Group Submissions 
+@router.get("/group-submissions")
+async def get_group_submissions(current_user: dict = Depends(get_current_user)):
+    student_id = current_user["user_id"]
+    groups = list(register_col.find({"student_ids": student_id}, {"_id": 0}))
+
+    if not groups:
+        raise HTTPException(status_code=404, detail="No data")
+
+    return [
+        {
+            "title": s["title"],
+            "area": s["area"],
+            "status": s.get("status", "pending")
+        }
+        for s in groups
+    ]
