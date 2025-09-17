@@ -22,3 +22,17 @@ def delete_user(user_id: str):
     if result.deleted_count == 0:
         raise HTTPException(status_code=404, detail="User not found")
     return {"message": "User deleted"}
+
+@router.put("/update-user/{user_id}")
+def update_user(user_id: str, user: User):
+    update_data = user.dict(exclude_unset=True)
+    if "password" in update_data:
+        update_data["password"] = hash_password(update_data["password"])
+    result = user_collection.update_one({"ID": user_id}, {"$set": update_data})
+    if result.modified_count == 0:
+        raise HTTPException(status_code=404, detail="User not updated")
+    return {"message": "User updated"}
+
+class LoginRequest(BaseModel):
+    user_id: str
+    password: str
