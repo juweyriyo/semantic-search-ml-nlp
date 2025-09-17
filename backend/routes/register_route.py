@@ -9,3 +9,11 @@ from backend.auth.auth_bearer import JWTBearer, get_current_user
 
 router = APIRouter()
 
+# Register New Project 
+@router.post("/register-project")
+async def register_project(data: RegisterModel):
+    try:
+        return await register_project_controller(data)
+    except HTTPException as e:
+        print("❌ ERROR:", e.detail)
+        raise e
