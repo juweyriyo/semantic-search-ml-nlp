@@ -36,3 +36,7 @@ def update_user(user_id: str, user: User):
 class LoginRequest(BaseModel):
     user_id: str
     password: str
+
+@router.post("/login")
+def login(data: LoginRequest):
+    return login_user(data.user_id, data.password)
