@@ -6,3 +6,7 @@ from backend.db.connection import user_collection
 from backend.auth.utils import hash_password
 
 router = APIRouter()
+
+@router.post("/register-user")
+def create_user(user: User):
+    return register_user(user)
