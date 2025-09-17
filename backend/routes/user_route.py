@@ -15,3 +15,10 @@ def create_user(user: User):
 def get_all_users():
     users = list(user_collection.find({}, {"_id": 0, "password": 0}))
     return users
+
+@router.delete("/delete-user/{user_id}")
+def delete_user(user_id: str):
+    result = user_collection.delete_one({"ID": user_id})
+    if result.deleted_count == 0:
+        raise HTTPException(status_code=404, detail="User not found")
+    return {"message": "User deleted"}
