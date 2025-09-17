@@ -92,3 +92,11 @@ async def accept_project(group_id: str):
         return await accept_project_controller(group_id)
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
+    
+#  Accept Project via /submissions/accept (with JSON body) 
+@router.post("/submissions/accept")
+async def accept_submission(payload: dict):
+    group_id = payload.get("group_id")
+    if not group_id:
+        raise HTTPException(status_code=400, detail="group_id is required")
+    return await accept_project_controller(group_id)
