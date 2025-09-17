@@ -11,3 +11,7 @@ def get_notes(student_id: str):
 @router.post("/")
 def create_note(note: NoteCreate):
     return ctrl.create_note(note)
+
+@router.put("/{note_id}")
+def update_note(note_id: str, note: NoteUpdate):
+    return ctrl.update_note(note_id, note)
