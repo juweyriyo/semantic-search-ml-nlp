@@ -17,3 +17,17 @@ async def register_project(data: RegisterModel):
     except HTTPException as e:
         print("❌ ERROR:", e.detail)
         raise e
+    
+# Check Student Group 
+@router.get("/check-student/{student_id}")
+async def check_student_group(student_id: str):
+    submissions = list(register_col.find({"student_ids": student_id}, {"_id": 0}))
+    if not submissions:
+        return {"message": "Student not registered in any group"}
+
+    accepted = next((s for s in submissions if s.get("status") == "accepted"), None)
+    if accepted:
+        accepted["status"] = "accepted"
+        return accepted
+
+    return submissions[0]
