@@ -11,3 +11,8 @@ def get_top3():
     counter = Counter([doc["category"] for doc in docs if "category" in doc])
     top3 = counter.most_common(3)
     return [{"category": cat, "count": cnt} for cat, cnt in top3]
+
+@router.get("/category/all")
+def get_all_categories():
+    docs = list(collection.find({}, {"category": 1, "year": 1, "_id": 0}))
+    return docs
