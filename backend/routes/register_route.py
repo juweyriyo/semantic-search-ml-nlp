@@ -67,3 +67,19 @@ async def get_group_submissions(current_user: dict = Depends(get_current_user)):
         }
         for s in groups
     ]
+
+#  Check Student Registration Status 
+@router.get("/check-registration-status")
+async def check_registration_status(current_user: dict = Depends(get_current_user)):
+    student_id = current_user["user_id"]
+    group = register_col.find_one({"student_ids": student_id})
+
+    if not group:
+        return {"status": "new_user"}
+
+    group["_id"] = str(group["_id"])  # Convert ObjectId to string
+
+    if group.get("status") == "accepted":
+        return {"status": "accepted", "group": group}
+
+    return {"status": "pending_or_rejected", "group": group}
