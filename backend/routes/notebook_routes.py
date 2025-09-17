@@ -7,3 +7,7 @@ router = APIRouter(prefix="/api/notes", tags=["Notebook"])
 @router.get("/{student_id}")
 def get_notes(student_id: str):
     return ctrl.get_notes_by_student(student_id)
+
+@router.post("/")
+def create_note(note: NoteCreate):
+    return ctrl.create_note(note)
