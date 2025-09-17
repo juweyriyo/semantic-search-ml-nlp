@@ -14,3 +14,7 @@ def register(data: Graduate):
 @router.get("/graduates")
 def get_all():
     return graduation_controller.get_all_graduates()
+
+@router.put("/update-graduate/{student_id}")
+def update(student_id: str, data: Graduate):
+    return graduation_controller.update_graduate(student_id, data)
