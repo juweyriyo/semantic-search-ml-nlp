@@ -7,3 +7,6 @@ from bson import ObjectId
 
 router = APIRouter()
 
+@router.post("/register-graduate")
+def register(data: Graduate):
+    return graduation_controller.register_graduate(data)
