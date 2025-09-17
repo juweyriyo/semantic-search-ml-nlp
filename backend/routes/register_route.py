@@ -31,3 +31,21 @@ async def check_student_group(student_id: str):
         return accepted
 
     return submissions[0]
+
+#  Check Graduate Eligibility 
+@router.get("/check-graduate/{student_id}")
+async def check_graduate_eligibility(student_id: str):
+    student = graduates_col.find_one({"student_id": student_id})
+    if not student:
+        raise HTTPException(status_code=404, detail="Student not found in graduates list")
+
+    grad_year = student.get("graduation_year")
+    current_year = datetime.now().year
+
+    if grad_year not in {current_year - 1, current_year, current_year + 1}:
+        raise HTTPException(
+            status_code=403,
+            detail=f"Student not eligible to register (Grad Year: {grad_year})"
+        )
+
+    return {"eligible": True, "graduation_year": grad_year}
