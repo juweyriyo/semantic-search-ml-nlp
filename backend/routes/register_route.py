@@ -83,3 +83,12 @@ async def check_registration_status(current_user: dict = Depends(get_current_use
         return {"status": "accepted", "group": group}
 
     return {"status": "pending_or_rejected", "group": group}
+
+#  Accept Project via /accept-project/{group_id} 
+@router.post("/accept-project/{group_id}")
+async def accept_project(group_id: str):
+    try:
+        print("📥 Received group_id:", group_id)  # ✅ debug
+        return await accept_project_controller(group_id)
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
