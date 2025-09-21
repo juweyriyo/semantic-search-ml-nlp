@@ -30,3 +30,9 @@ for _, row in df.iterrows():
 
     except Exception as e:
         print(f"❌ Validation failed for row {_}: {e}")
+
+if records:
+    collection.insert_many(records)
+    print(f"✅ Inserted {len(records)} clean documents into MongoDB.")
+else:
+    print("⚠️ No valid records to insert.")
