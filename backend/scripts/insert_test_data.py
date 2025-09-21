@@ -24,3 +24,5 @@ db.users.insert_one({"id": "U0001", "name": "Test User", "role": "student", "pas
 
 # 5. registersTitle
 db.registersTitle.insert_one({"title": "Dummy Title", "group_id": "GR001", "status": "pending"})
+
+print("✅ Test documents inserted into all collections!")
