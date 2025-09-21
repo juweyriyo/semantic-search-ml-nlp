@@ -18,3 +18,6 @@ db.projects.insert_one({"title": "Test Project", "category": "AI", "year": 2025,
 
 # 3. graduates
 db.graduates.insert_one({"student_id": "G0001", "name": "Test Graduate", "year": 2025})
+
+# 4. users
+db.users.insert_one({"id": "U0001", "name": "Test User", "role": "student", "password": "test123"})
