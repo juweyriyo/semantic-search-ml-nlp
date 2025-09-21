@@ -21,3 +21,6 @@ db.graduates.insert_one({"student_id": "G0001", "name": "Test Graduate", "year":
 
 # 4. users
 db.users.insert_one({"id": "U0001", "name": "Test User", "role": "student", "password": "test123"})
+
+# 5. registersTitle
+db.registersTitle.insert_one({"title": "Dummy Title", "group_id": "GR001", "status": "pending"})
