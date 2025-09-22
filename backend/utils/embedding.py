@@ -12,3 +12,6 @@ def get_similar_titles(title: str, db_vectors: list, threshold: float = 0.55):
 
     results = [doc for doc in db_vectors if doc["score"] >= threshold]
     results.sort(key=lambda x: x["score"], reverse=True)
+
+    max_score = float(np.max(similarities)) if len(similarities) else 0.0
+    return results, max_score
