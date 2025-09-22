@@ -9,3 +9,6 @@ def get_similar_titles(title: str, db_vectors: list, threshold: float = 0.55):
     similarities = util.cos_sim(title_vector, vectors)[0].cpu().numpy()
     for i, score in enumerate(similarities):
         db_vectors[i]["score"] = float(score)
+
+    results = [doc for doc in db_vectors if doc["score"] >= threshold]
+    results.sort(key=lambda x: x["score"], reverse=True)
