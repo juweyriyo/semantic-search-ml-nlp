@@ -12,3 +12,7 @@ from backend.routes import register_route
 from backend.routes import notebook_routes
 from backend.routes import report_routes
 from backend.routes import submission_route  
+
+load_dotenv(".env.local")
+
+app = FastAPI()
