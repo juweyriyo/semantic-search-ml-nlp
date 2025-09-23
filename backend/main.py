@@ -29,3 +29,16 @@ app.add_middleware(
 @app.on_event("startup")
 def load_vectors_at_startup():
     semantic_engine.load_documents()
+
+# Routers
+app.include_router(semantic.router)
+app.include_router(user_route.router)  # ✅ Added login routes
+app.include_router(dashboard.router)
+app.include_router(category.router)
+app.include_router(semantic_search.router)
+app.include_router(register_route.router, prefix="/api")
+app.include_router(notebook_routes.router)
+app.include_router(report_routes.router)
+app.include_router(submission_route.router, prefix="/api")
+app.include_router(graduation_route.router)
+# app.include_router(accept_route, prefix="/api")
