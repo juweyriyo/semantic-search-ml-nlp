@@ -25,3 +25,7 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+@app.on_event("startup")
+def load_vectors_at_startup():
+    semantic_engine.load_documents()
