@@ -48,3 +48,11 @@ def read_root():
     return {
         "message": "✅ Semantic Search API is Running"
     }
+
+@app.get("/test-db")
+def test_db():
+    from backend.db.connection import collection
+    return {
+        "count": collection.count_documents({}),
+        "sample": collection.find_one()
+    }
