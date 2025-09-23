@@ -42,3 +42,9 @@ app.include_router(report_routes.router)
 app.include_router(submission_route.router, prefix="/api")
 app.include_router(graduation_route.router)
 # app.include_router(accept_route, prefix="/api")
+
+@app.get("/")
+def read_root():
+    return {
+        "message": "✅ Semantic Search API is Running"
+    }
