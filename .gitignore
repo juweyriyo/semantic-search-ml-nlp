@@ -33,6 +33,11 @@ insert_graduates.py
 node_modules/
 
 
+# .gitignore
+frontend/.next
+frontend/node_modules
+frontend/.env.local
+
 
 # env files
 frontend/.env
