@@ -27,3 +27,8 @@ export const getAllCategoryData = async () => {
   console.log("API response:", response.data); 
   return response.data; 
 };
+
+//URL
+const API = axios.create({
+  baseURL: "API_BASE",
+});
