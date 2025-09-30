@@ -38,3 +38,10 @@ export const semanticSearch = async (title: string, threshold = 0.55) => {
   const res = await API.post("/semantic-search", { title, threshold });
   return res.data;
 };
+
+// ragistar form
+export async function checkGraduate(studentId: string) {
+  const res = await fetch(`API_BASE/api/check-graduate/${studentId}`);
+  if (!res.ok) throw new Error("Graduate check failed");
+  return await res.json();
+}
