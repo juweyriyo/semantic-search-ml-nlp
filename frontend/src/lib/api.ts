@@ -111,3 +111,18 @@ export async function getStudentSubmissions(token: string) {
     status: item.status || "pending",
   }));
 }
+
+// 
+export async function getNotes(studentId: string) {
+  const res = await fetch(`API_BASE/api/notes/${studentId}`);
+  return await res.json();
+}
+// ragistar note book
+export async function createNote(studentId: string, note: string) {
+  const res = await fetch(`API_BASE/api/notes`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ student_id: studentId, note }),
+  });
+  return await res.json();
+}
