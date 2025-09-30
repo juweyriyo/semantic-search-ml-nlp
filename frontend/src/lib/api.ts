@@ -136,3 +136,11 @@ export async function updateNote(noteId: string, note: string) {
   });
   return await res.json();
 }
+
+//deleteNote
+export async function deleteNote(noteId: string) {
+  const res = await fetch(`API_BASE/api/notes/${noteId}`, {
+    method: "DELETE",
+  });
+  return await res.json();
+}
