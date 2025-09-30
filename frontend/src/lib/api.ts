@@ -156,3 +156,12 @@ export async function fetchAllSubmissions() {
   const res = await fetch("API_BASE/api/submissions");
   return res.json();
 }
+
+// acceptSubmission
+export async function acceptSubmission(group_id: string) {
+  const res = await fetch(`API_BASE/api/accept-project/${group_id}`, {
+    method: "POST",
+  });
+  if (!res.ok) throw new Error("Accept failed");
+  return res.json();
+}
