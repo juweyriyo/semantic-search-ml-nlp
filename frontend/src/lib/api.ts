@@ -32,3 +32,9 @@ export const getAllCategoryData = async () => {
 const API = axios.create({
   baseURL: "API_BASE",
 });
+
+// title threshold
+export const semanticSearch = async (title: string, threshold = 0.55) => {
+  const res = await API.post("/semantic-search", { title, threshold });
+  return res.data;
+};
