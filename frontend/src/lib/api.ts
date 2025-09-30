@@ -8,3 +8,15 @@ console.log("📌 Frontend Token:", token);
 
 // URL-ka production
 const API_BASE = "API_BASE"; 
+
+//Top 3 category
+export async function getTop3Categories() {
+  const res = await fetch("API_BASE/top3");
+  if (!res.ok) throw new Error("Failed to fetch data");
+  return res.json();
+}
+
+export async function getTopCategories() {
+  const res = await fetch("API_BASE/category/top3");
+  return await res.json();
+}
