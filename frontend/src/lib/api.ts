@@ -45,3 +45,10 @@ export async function checkGraduate(studentId: string) {
   if (!res.ok) throw new Error("Graduate check failed");
   return await res.json();
 }
+
+//ragistar StudentGroup
+export async function checkStudentGroup(studentId: string) {
+  const res = await fetch(`API_BASE/api/check-student/${studentId}`);
+  if (!res.ok) throw new Error("Student group check failed");
+  return await res.json();
+}
