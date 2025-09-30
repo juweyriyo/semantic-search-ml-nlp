@@ -91,3 +91,23 @@ export const getStudentSubmission = async (studentId: string) => {
     throw new Error("No data found for student");
   }
 };
+
+// 🟡 You can add more APIs here like registerTitle(), getCategories(), etc.
+
+// getStudentSubmissions
+export async function getStudentSubmissions(token: string) {
+  const res = await fetch(`${API_BASE}/api/group-submissions`, {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  });
+
+  if (!res.ok) throw new Error("No data");
+  const data = await res.json();
+
+  return data.map((item: any) => ({
+    title: item.title || "Untitled",
+    area: item.area || "N/A",
+    status: item.status || "pending",
+  }));
+}
