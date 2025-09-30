@@ -62,3 +62,19 @@ export async function registerProject(data: any) {
     throw error.response?.data?.detail || "Registration failed";
   }
 }
+
+// 🟢 Check student registration status
+export const checkRegistrationStatus = async () => {
+  try {
+    const token = Cookies.get("token");
+    const res = await axios.get("API_BASE/api/check-registration-status", {
+      headers: {
+        Authorization: `Bearer ${token}`, // 👉 Add this line
+      },
+    });
+    return res.data;
+  } catch (err) {
+    console.error("❌ Error checking registration status:", err);
+    throw new Error("Failed to check registration status");
+  }
+};
