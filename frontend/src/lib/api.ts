@@ -150,3 +150,9 @@ export async function fetchReportData() {
   const res = await axios.get("API_BASE/api/report");
   return res.data.data;
 }
+
+// student submission
+export async function fetchAllSubmissions() {
+  const res = await fetch("API_BASE/api/submissions");
+  return res.json();
+}
