@@ -52,3 +52,13 @@ export async function checkStudentGroup(studentId: string) {
   if (!res.ok) throw new Error("Student group check failed");
   return await res.json();
 }
+
+//registerProject
+export async function registerProject(data: any) {
+  try {
+    const response = await axios.post(`${API_BASE}/api/register-project`, data);
+    return response.data;
+  } catch (error: any) {
+    throw error.response?.data?.detail || "Registration failed";
+  }
+}
