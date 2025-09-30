@@ -126,3 +126,13 @@ export async function createNote(studentId: string, note: string) {
   });
   return await res.json();
 }
+
+// update note book
+export async function updateNote(noteId: string, note: string) {
+  const res = await fetch(`API_BASE/api/notes/${noteId}`, {
+    method: "PATCH",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ note }),
+  });
+  return await res.json();
+}
