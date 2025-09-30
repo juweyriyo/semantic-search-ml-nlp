@@ -144,3 +144,9 @@ export async function deleteNote(noteId: string) {
   });
   return await res.json();
 }
+
+// report
+export async function fetchReportData() {
+  const res = await axios.get("API_BASE/api/report");
+  return res.data.data;
+}
