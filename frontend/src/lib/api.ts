@@ -20,3 +20,10 @@ export async function getTopCategories() {
   const res = await fetch("API_BASE/category/top3");
   return await res.json();
 }
+
+//All category
+export const getAllCategoryData = async () => {
+  const response = await axios.get("API_BASE/category/all");
+  console.log("API response:", response.data); 
+  return response.data; 
+};
