@@ -112,7 +112,7 @@ export async function getStudentSubmissions(token: string) {
   }));
 }
 
-// 
+// Notebook APIs
 export async function getNotes(studentId: string) {
   const res = await fetch(`API_BASE/api/notes/${studentId}`);
   return await res.json();
