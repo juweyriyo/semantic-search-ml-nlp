@@ -78,3 +78,16 @@ export const checkRegistrationStatus = async () => {
     throw new Error("Failed to check registration status");
   }
 };
+
+// 🔵 Get submissions for current student
+export const getStudentSubmission = async (studentId: string) => {
+  try {
+    const res = await axios.get(`API_BASE/api/group-submissions?student_id=${studentId}`, {
+      withCredentials: true,
+    });
+    return res.data;
+  } catch (err) {
+    console.error("❌ Error fetching submissions:", err);
+    throw new Error("No data found for student");
+  }
+};
