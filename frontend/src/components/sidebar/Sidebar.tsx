@@ -15,3 +15,8 @@ import {
   Icon,
 } from "lucide-react";
 import { group } from "console";
+
+type SidebarProps = {
+  role: "Admin" | "Student";
+  onLogout: () => void;
+};
