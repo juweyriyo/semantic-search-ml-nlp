@@ -47,3 +47,28 @@ export default function Sidebar({ role, onLogout }: SidebarProps) {
           { label: "Notebook", icon: NotebookText, key: "notebook" },
           { label: "User Info", icon: UserCircle, key: "profile" },
         ];
+
+  return (
+    <aside className="w-64 bg-[#0f172a] text-white shadow-md p-4 space-y-4 border-r">
+      <div className="text-xl font-bold text-white ml-10">MyJUST</div>
+      <nav className="space-y-2 mb-10 ">
+        {menu.map(({ label, icon: Icon, key }) => {
+          const active = pathname.includes(key); // ✅ midka hada la joogo
+          return (
+            <Button
+              key={key}
+              variant={active ? "default" : "ghost"}
+              className="w-full justify-start gap-2"
+              onClick={() => router.push(`/dashboard/${key}`)}
+            >
+              <Icon className="w-4 h-4" /> {label}
+            </Button>
+          );
+        })}
+      </nav>
+      <Button variant="destructive" className="w-full mt-10" onClick={onLogout}>
+        Logout
+      </Button>
+    </aside>
+  );
+}
