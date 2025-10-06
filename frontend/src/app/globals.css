@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* globals.css */
+
+:root {
+  --background: 0 0% 100%; /* white */
+  --foreground: 222.2 47.4% 11.2%; /* dark text */
+  
+}
+
+.dark {
+  --background: 222.2 47.4% 11.2%; /* dark bg */
+  --foreground: 210 40% 98%; /* light text */
+}
