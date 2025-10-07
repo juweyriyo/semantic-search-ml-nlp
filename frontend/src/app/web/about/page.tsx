@@ -16,5 +16,26 @@ export default function AboutPage() {
         </p>
       </section>
 
+      {/* Image + Description */}
+      <section className="flex flex-col lg:flex-row items-center justify-between gap-10 mb-16">
+        <div className="lg:w-1/2">
+          <Image
+            src="/images/haa.png"
+            alt="About Semantic Search"
+            width={600}
+            height={400}
+            className="rounded-lg shadow-md"
+          />
+        </div>
+        <div className="lg:w-1/2 space-y-4">
+          <h2 className="text-2xl font-semibold">Why We Built This System</h2>
+          <p>
+            Traditionally, students had to wait days for a manual approval process to see if their title already existed. Our solution uses semantic search powered by SBERT to instantly find similar titles, saving time and effort.
+          </p>
+          <p>
+            Whether you're working on AI, IoT, or Web Development — this tool ensures your idea is unique by checking against past projects using true **meaning-based comparison**.
+          </p>
+        </div>
+      </section>
   );
 }
