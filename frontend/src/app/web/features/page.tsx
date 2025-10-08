@@ -34,6 +34,15 @@ export default function FeaturesPage() {
           </p>
         </div>
 
+        {/* Feature Card 3 */}
+        <div className="p-6 bg-muted rounded-xl shadow-md">
+          <LineChart className="h-8 w-8 text-blue-600 mb-4 mx-auto" />
+          <h3 className="text-lg font-semibold mb-2">Trend Analytics</h3>
+          <p>
+            See which project categories are most popular over time using visual charts. Analyze year-by-year trends.
+          </p>
+        </div>
+
       </div>
     </main>
   );
