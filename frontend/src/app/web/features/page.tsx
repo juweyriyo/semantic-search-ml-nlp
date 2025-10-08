@@ -61,6 +61,15 @@ export default function FeaturesPage() {
           </p>
         </div>
 
+        {/* Feature Card 6 */}
+        <div className="p-6 bg-muted rounded-xl shadow-md">
+          <BadgeCheck className="h-8 w-8 text-blue-600 mb-4 mx-auto" />
+          <h3 className="text-lg font-semibold mb-2">Submission Status Tracking</h3>
+          <p>
+              Easily track whether your submitted title has been accepted, rejected, or is under review.
+              Stay informed in real time without waiting for manual feedback.          
+          </p>
+        </div>
       </div>
     </main>
   );
