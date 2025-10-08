@@ -52,6 +52,15 @@ export default function FeaturesPage() {
           </p>
         </div>
 
+        {/* Feature Card 5 */}
+        <div className="p-6 bg-muted rounded-xl shadow-md">
+          <LayoutTemplate className="h-8 w-8 text-blue-600 mb-4 mx-auto" />
+          <h3 className="text-lg font-semibold mb-2">Clean UI Design</h3>
+          <p>
+            Modern layout optimized for light and dark modes, built with accessibility and clarity in mind.
+          </p>
+        </div>
+
       </div>
     </main>
   );
