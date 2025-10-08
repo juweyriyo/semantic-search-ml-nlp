@@ -43,6 +43,15 @@ export default function FeaturesPage() {
           </p>
         </div>
 
+        {/* Feature Card 4 */}
+        <div className="p-6 bg-muted rounded-xl shadow-md">
+          <Users2 className="h-8 w-8 text-blue-600 mb-4 mx-auto" />
+          <h3 className="text-lg font-semibold mb-2">Multi-User Login</h3>
+          <p>
+            Both students and admins have separate login roles, giving customized access and actions.
+          </p>
+        </div>
+
       </div>
     </main>
   );
