@@ -1,0 +1,76 @@
+"use client";
+
+import { BrainCircuit, SearchCheck, LineChart, Users2, LayoutTemplate, MessageSquareHeart,  BadgeCheck } from "lucide-react";
+
+export default function FeaturesPage() {
+  return (
+    <main className="min-h-screen py-16 px-6 text-center bg-background text-foreground transition-colors">
+      {/* Top Heading */}
+      <h2 className="text-sm font-semibold text-blue-500 uppercase tracking-wide mb-2">
+        Features Overview
+      </h2>
+      <h1 className="text-4xl font-bold mb-8">
+        Discover the Key Features of Our Semantic Search Platform
+      </h1>
+
+      {/* Grid of Features */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+        {/* Feature Card 1 */}
+        <div className="p-6 bg-muted rounded-xl shadow-md">
+          <SearchCheck className="h-8 w-8 text-blue-600 mb-4 mx-auto" />
+          <h3 className="text-lg font-semibold mb-2">Semantic Matching</h3>
+          <p>
+            Instantly matches project titles based on meaning, not just keywords. Uses SBERT-powered AI to detect paraphrasing.
+          </p>
+        </div>
+
+        {/* Feature Card 2 */}
+        <div className="p-6 bg-muted rounded-xl shadow-md">
+          <BrainCircuit className="h-8 w-8 text-blue-600 mb-4 mx-auto" />
+          <h3 className="text-lg font-semibold mb-2">Similar Title Detection</h3>
+          <p>
+              Automatically detects if your proposed title closely matches any existing ones.
+              If a match is found, it is shown. Otherwise, you're allowed to submit the new title.
+          </p>
+        </div>
+
+        {/* Feature Card 3 */}
+        <div className="p-6 bg-muted rounded-xl shadow-md">
+          <LineChart className="h-8 w-8 text-blue-600 mb-4 mx-auto" />
+          <h3 className="text-lg font-semibold mb-2">Trend Analytics</h3>
+          <p>
+            See which project categories are most popular over time using visual charts. Analyze year-by-year trends.
+          </p>
+        </div>
+
+        {/* Feature Card 4 */}
+        <div className="p-6 bg-muted rounded-xl shadow-md">
+          <Users2 className="h-8 w-8 text-blue-600 mb-4 mx-auto" />
+          <h3 className="text-lg font-semibold mb-2">Multi-User Login</h3>
+          <p>
+            Both students and admins have separate login roles, giving customized access and actions.
+          </p>
+        </div>
+
+        {/* Feature Card 5 */}
+        <div className="p-6 bg-muted rounded-xl shadow-md">
+          <LayoutTemplate className="h-8 w-8 text-blue-600 mb-4 mx-auto" />
+          <h3 className="text-lg font-semibold mb-2">Clean UI Design</h3>
+          <p>
+            Modern layout optimized for light and dark modes, built with accessibility and clarity in mind.
+          </p>
+        </div>
+
+        {/* Feature Card 6 */}
+        <div className="p-6 bg-muted rounded-xl shadow-md">
+          <BadgeCheck className="h-8 w-8 text-blue-600 mb-4 mx-auto" />
+          <h3 className="text-lg font-semibold mb-2">Submission Status Tracking</h3>
+          <p>
+              Easily track whether your submitted title has been accepted, rejected, or is under review.
+              Stay informed in real time without waiting for manual feedback.          
+          </p>
+        </div>
+      </div>
+    </main>
+  );
+}
