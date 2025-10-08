@@ -24,6 +24,16 @@ export default function FeaturesPage() {
           </p>
         </div>
 
+        {/* Feature Card 2 */}
+        <div className="p-6 bg-muted rounded-xl shadow-md">
+          <BrainCircuit className="h-8 w-8 text-blue-600 mb-4 mx-auto" />
+          <h3 className="text-lg font-semibold mb-2">Similar Title Detection</h3>
+          <p>
+              Automatically detects if your proposed title closely matches any existing ones.
+              If a match is found, it is shown. Otherwise, you're allowed to submit the new title.
+          </p>
+        </div>
+
       </div>
     </main>
   );
