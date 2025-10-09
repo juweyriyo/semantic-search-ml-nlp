@@ -24,6 +24,14 @@ export default function HomePage() {
         has already been submitted. Powered by advanced NLP AI and SBERT technology.
       </p>
 
+      {/* Try Now Button */}
+      <a
+        href="/web/login"
+        className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-6 rounded transition"
+      >
+        Try Now
+      </a>
+
     </main>
   );
 }
