@@ -40,7 +40,15 @@ export default function StudentLoginPage() {
 
   return (
     <div className="min-h-screen grid grid-cols-1 md:grid-cols-2">
-     
+      {/* Left side - Image */}
+      <div className="hidden md:flex items-center justify-center ">
+        <img
+          src="/images/user.png" // 🖼️ Replace with your actual image path in public/
+          alt="student Login"
+          className="w-3/4 h-auto"
+        />
+      </div>
+
     </div>
   );
 }
