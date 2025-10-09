@@ -18,6 +18,12 @@ export default function HomePage() {
         AI-Powered Semantic Search for <br /> University Students
       </h1>
 
+      {/* Description */}
+      <p className="text-lg max-w-2xl mb-6">
+        Instantly check if your graduation project title — even if worded differently —
+        has already been submitted. Powered by advanced NLP AI and SBERT technology.
+      </p>
+
     </main>
   );
 }
