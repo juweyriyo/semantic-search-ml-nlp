@@ -37,3 +37,10 @@ export default function StudentLoginPage() {
       console.error(error);
     }
   };
+
+  return (
+    <div className="min-h-screen grid grid-cols-1 md:grid-cols-2">
+     
+    </div>
+  );
+}
