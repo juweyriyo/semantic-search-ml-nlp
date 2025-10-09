@@ -32,6 +32,16 @@ export default function HomePage() {
         Try Now
       </a>
 
+      {/* Hero Image */}
+      <div className="mt-10">
+        <Image
+          src="/images/semantic-hero.png"
+          alt="Semantic Search Illustration"
+          width={500}
+          height={500}
+          className="rounded-lg"
+        />
+      </div>
     </main>
   );
 }
