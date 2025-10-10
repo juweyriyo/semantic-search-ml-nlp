@@ -29,7 +29,15 @@ const team = [
 export default function TeamPage() {
   return (
     <main className="min-h-screen px-4 py-16 md:px-20 lg:px-32 bg-background text-foreground transition-colors">
-      
+      {/* Header */}
+      <div className="text-center mb-12">
+        <span className="text-sm font-medium uppercase text-primary">Our Great Team</span>
+        <h1 className="text-4xl md:text-5xl font-bold mt-2 mb-4">Supported by Real People</h1>
+        <p className="text-lg max-w-2xl mx-auto">
+          Meet the creative and technical minds who built this semantic search system to empower university students.
+        </p>
+      </div>
+
     </main>
   );
 }
