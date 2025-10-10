@@ -25,3 +25,11 @@ const team = [
     bgColor: "bg-background text-foreground",
   },
 ];
+
+export default function TeamPage() {
+  return (
+    <main className="min-h-screen px-4 py-16 md:px-20 lg:px-32 bg-background text-foreground transition-colors">
+      
+    </main>
+  );
+}
