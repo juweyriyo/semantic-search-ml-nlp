@@ -38,6 +38,29 @@ export default function TeamPage() {
         </p>
       </div>
 
+      {/* Team Members */}
+      <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
+        {team.map((member, index) => (
+          <div
+            key={index}
+            className={`rounded-xl overflow-hidden shadow-md hover:shadow-lg transition ${member.bgColor} text-center`}
+          >
+            <div className="w-full h-60 relative">
+              <Image
+                src={member.image}
+                alt={member.name}
+                layout="fill"
+                objectFit="cover"
+                className="rounded-b-none"
+              />
+            </div>
+            <div className="py-4 px-2 bg-background text-foreground">
+              <h3 className="text-lg font-semibold">{member.name}</h3>
+              <p className="text-sm text-muted-foreground">{member.role}</p>
+            </div>
+          </div>
+        ))}
+      </div>
     </main>
   );
 }
