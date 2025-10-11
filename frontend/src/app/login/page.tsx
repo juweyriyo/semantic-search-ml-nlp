@@ -8,5 +8,8 @@ import axios from "axios";
 import Cookies from "js-cookie";
 
 export default function AdminLoginPage() {
-  
+  const [userId, setUserId] = useState("");
+  const [password, setPassword] = useState("");
+  const router = useRouter();
+
 }
