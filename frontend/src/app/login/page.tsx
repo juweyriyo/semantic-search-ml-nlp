@@ -12,4 +12,30 @@ export default function AdminLoginPage() {
   const [password, setPassword] = useState("");
   const router = useRouter();
 
+  const handleLogin = async () => {
+    try {
+      const res = await axios.post("http://localhost:8000/login", {
+        user_id: userId,
+        password: password,
+      });
+
+      const { token, user } = res.data;
+
+      Cookies.set("token", token, {
+        expires: 7,
+        secure: false,
+        sameSite: "strict",
+      });
+
+      if (user.role === "Admin") {
+        router.push("/dashboard");
+      } else {
+        alert("Access denied. Only admin allowed.");
+      }
+    } catch (error: any) {
+      alert("Invalid credentials. Please try again.");
+      console.error(error);
+    }
+  };
+
 }
