@@ -32,6 +32,13 @@ export default function DashboardPage() {
         <Bar data={chartData} />
       </section>
 
+      <div className="bg-white p-4 rounded-lg border-l-4 border-blue-500 shadow-md text-gray-700">
+        🎓 "Qalin-jabintu ma ahan dhammaadka safarka, waa bilow cusub.  
+        Waxaad hadda haysataa awoodda, aqoonta, iyo fursadda aad ku beddeli karto adduunka.
+        <br />
+        <em>— Jamhuuriya University</em>
+      </div>
+
     </main>
   );
 }
