@@ -10,5 +10,8 @@ type Props = { children: React.ReactNode };
 type UserType = { name: string; role: "Admin" | "Student" };
 
 export default function DashboardLayout({ children }: Props) {
-  
+  const router = useRouter();
+  const [user, setUser] = useState<UserType | null>(null);
+  const [loading, setLoading] = useState(true);
+
 }
