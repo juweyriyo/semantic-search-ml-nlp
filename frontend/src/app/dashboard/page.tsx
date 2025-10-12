@@ -39,6 +39,13 @@ export default function DashboardPage() {
         <em>— Jamhuuriya University</em>
       </div>
 
+      <Image
+        src="/images/univer.png"
+        alt="University Logo"
+        width={800}
+        height={400}
+        className="rounded shadow"
+      />
     </main>
   );
 }
