@@ -30,4 +30,16 @@ export default function DashboardLayout({ children }: Props) {
     }
   }, []);
 
+  if (loading || !user) return <div className="p-10 text-center">Loading...</div>;
+
+  return (
+    <div className="flex min-h-screen">
+      <Sidebar role={user.role} onLogout={() => {
+        Cookies.remove("token");
+        localStorage.removeItem("user");
+        router.push("/login");
+      }} />
+      <main className="flex-1 p-6 bg-gray-100">{children}</main>
+    </div>
+  );
 }
