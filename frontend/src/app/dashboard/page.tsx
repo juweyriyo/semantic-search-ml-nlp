@@ -27,7 +27,11 @@ export default function DashboardPage() {
   return (
     <main className="p-8 space-y-6">
       <h1 className="text-3xl font-bold text-indigo-800">🎓 Welcome To Researcher</h1>
-     
+      <section className="bg-gray-200 p-4 rounded-md shadow">
+        <h2 className="text-xl mb-4 text-gray-700"> Top 3 Most Frequent Categories (All Time)</h2>
+        <Bar data={chartData} />
+      </section>
+
     </main>
   );
 }
