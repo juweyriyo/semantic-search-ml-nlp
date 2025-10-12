@@ -23,4 +23,11 @@ export default function DashboardPage() {
       },
     ],
   };
+
+  return (
+    <main className="p-8 space-y-6">
+      <h1 className="text-3xl font-bold text-indigo-800">🎓 Welcome To Researcher</h1>
+     
+    </main>
+  );
 }
