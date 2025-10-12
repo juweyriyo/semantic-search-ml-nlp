@@ -5,3 +5,6 @@ import { useRouter } from "next/navigation";
 import Cookies from "js-cookie";
 import {jwtDecode} from "jwt-decode";
 import Sidebar from "@/components/sidebar/Sidebar";
+
+type Props = { children: React.ReactNode };
+type UserType = { name: string; role: "Admin" | "Student" };
