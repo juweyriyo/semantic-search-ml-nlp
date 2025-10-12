@@ -14,4 +14,20 @@ export default function DashboardLayout({ children }: Props) {
   const [user, setUser] = useState<UserType | null>(null);
   const [loading, setLoading] = useState(true);
 
+  useEffect(() => {
+    const token = Cookies.get("token");
+    if (!token) {
+      router.push("/login");
+      return;
+    }
+    try {
+      const decoded = jwtDecode<UserType>(token);
+      setUser(decoded);
+    } catch {
+      router.push("/login");
+    } finally {
+      setLoading(false);
+    }
+  }, []);
+
 }
