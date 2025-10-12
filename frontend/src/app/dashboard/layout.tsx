@@ -8,3 +8,7 @@ import Sidebar from "@/components/sidebar/Sidebar";
 
 type Props = { children: React.ReactNode };
 type UserType = { name: string; role: "Admin" | "Student" };
+
+export default function DashboardLayout({ children }: Props) {
+  
+}
