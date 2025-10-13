@@ -150,7 +150,20 @@ export default function AddStudentPage() {
               onChange={(e) => setFormData({ ...formData, password: e.target.value })}
               required={!editId}
             />
-            
+            <div className="flex gap-2">
+              <Button type="submit">{editId ? "Update" : "Register"}</Button>
+              <Button
+                type="button"
+                variant="ghost"
+                onClick={() => {
+                  setFormData({ id: "", name: "", password: "" });
+                  setEditId(null);
+                  setMode("table");
+                }}
+              >
+                Cancel
+              </Button>
+            </div>
           </form>
         </div>
       )}
