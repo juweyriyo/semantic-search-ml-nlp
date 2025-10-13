@@ -130,7 +130,9 @@ export default function AddStudentPage() {
           <h2 className="text-2xl font-semibold mb-4">
             {editId ? "Edit Student" : "Register New Student"}
           </h2>
-          
+          <form onSubmit={handleSubmit} className="space-y-4">
+            
+          </form>
         </div>
       )}
     </div>
