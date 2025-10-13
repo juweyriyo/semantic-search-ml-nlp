@@ -67,4 +67,11 @@ export default function AddStudentPage() {
     fetchStudents();
   };
 
+  const filteredStudents = students
+    .filter((u) => u.role === "student")
+    .filter((u) =>
+      u.name.toLowerCase().includes(search.toLowerCase()) ||
+      u.ID.toLowerCase().includes(search.toLowerCase())
+    );
+
 }
