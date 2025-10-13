@@ -100,12 +100,31 @@ export default function AddStudentPage() {
                 <th className="p-2">Actions</th>
               </tr>
             </thead>
-            
+            <tbody>
+              {filteredStudents.map((user) => (
+                <tr key={user.ID} className="border-t">
+                  <td className="p-2">{user.ID}</td>
+                  <td className="p-2">{user.name}</td>
+                  <td className="p-2 capitalize">{user.role}</td>
+                  <td className="p-2 space-x-2">
+                    <Button size="sm" onClick={() => handleEdit(user)}>
+                      <Pencil className="w-4 h-4" />
+                    </Button>
+                    <Button
+                      size="sm"
+                      variant="destructive"
+                      onClick={() => handleDelete(user.ID)}
+                    >
+                      <Trash2 className="w-4 h-4" />
+                    </Button>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
           </table>
         </>
       )}
 
-      
     </div>
   );
 }
