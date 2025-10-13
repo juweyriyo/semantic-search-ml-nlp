@@ -76,7 +76,12 @@ export default function AddStudentPage() {
 
   return (
     <div className="space-y-6">
-      
+      {mode === "table" && (
+        <>
+          
+        </>
+      )}
+
     </div>
   );
 }
