@@ -10,3 +10,7 @@ type User = {
   name: string;
   role: string;
 };
+
+export default function AddStudentPage() {
+  
+}
