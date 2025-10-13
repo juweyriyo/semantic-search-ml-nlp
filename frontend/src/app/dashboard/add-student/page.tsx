@@ -143,6 +143,13 @@ export default function AddStudentPage() {
               onChange={(e) => setFormData({ ...formData, name: e.target.value })}
               required
             />
+            <Input
+              placeholder="Password"
+              type="password"
+              value={formData.password}
+              onChange={(e) => setFormData({ ...formData, password: e.target.value })}
+              required={!editId}
+            />
             
           </form>
         </div>
