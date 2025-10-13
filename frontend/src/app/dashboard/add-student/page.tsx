@@ -55,4 +55,10 @@ export default function AddStudentPage() {
     }
   };
 
+  const handleEdit = (user: User) => {
+    setFormData({ id: user.ID, name: user.name, password: "" });
+    setEditId(user.ID);
+    setMode("form");
+  };
+
 }
