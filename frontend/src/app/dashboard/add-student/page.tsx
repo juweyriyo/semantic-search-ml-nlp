@@ -137,6 +137,12 @@ export default function AddStudentPage() {
               onChange={(e) => setFormData({ ...formData, id: e.target.value })}
               required
             />
+            <Input
+              placeholder="Full Name"
+              value={formData.name}
+              onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+              required
+            />
             
           </form>
         </div>
