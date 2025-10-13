@@ -18,4 +18,8 @@ export default function AddStudentPage() {
   const [editId, setEditId] = useState<string | null>(null);
   const [mode, setMode] = useState<"table" | "form">("table");
 
+  useEffect(() => {
+    fetchStudents();
+  }, []);
+
 }
