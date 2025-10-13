@@ -22,4 +22,9 @@ export default function AddStudentPage() {
     fetchStudents();
   }, []);
 
+  const fetchStudents = async () => {
+    const res = await axios.get("http://localhost:8000/users");
+    setStudents(res.data);
+  };
+
 }
