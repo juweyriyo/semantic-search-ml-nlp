@@ -91,9 +91,21 @@ export default function AddStudentPage() {
             />
           </div>
 
+          <table className="w-full table-auto bg-white rounded shadow">
+            <thead>
+              <tr className="bg-gray-100 text-left">
+                <th className="p-2">ID</th>
+                <th className="p-2">Name</th>
+                <th className="p-2">Role</th>
+                <th className="p-2">Actions</th>
+              </tr>
+            </thead>
+            
+          </table>
         </>
       )}
 
+      
     </div>
   );
 }
