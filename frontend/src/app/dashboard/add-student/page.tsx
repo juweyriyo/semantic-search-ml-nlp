@@ -78,7 +78,11 @@ export default function AddStudentPage() {
     <div className="space-y-6">
       {mode === "table" && (
         <>
-          
+          <div className="flex justify-between items-center">
+            <h2 className="text-2xl font-bold">Registered Students</h2>
+            <Button onClick={() => setMode("form")}>+ Add Student</Button>
+          </div>
+
         </>
       )}
 
