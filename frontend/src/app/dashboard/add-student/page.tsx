@@ -83,6 +83,14 @@ export default function AddStudentPage() {
             <Button onClick={() => setMode("form")}>+ Add Student</Button>
           </div>
 
+          <div className="max-w-sm">
+            <Input
+              placeholder="Search by name or ID"
+              value={search}
+              onChange={(e) => setSearch(e.target.value)}
+            />
+          </div>
+
         </>
       )}
 
