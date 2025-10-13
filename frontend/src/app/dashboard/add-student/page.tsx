@@ -125,6 +125,11 @@ export default function AddStudentPage() {
         </>
       )}
 
+      {mode === "form" && (
+        <div className="max-w-md mx-auto mt-10 bg-white p-6 rounded shadow space-y-4">
+          
+        </div>
+      )}
     </div>
   );
 }
