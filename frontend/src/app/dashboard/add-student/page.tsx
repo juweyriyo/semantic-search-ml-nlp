@@ -131,6 +131,12 @@ export default function AddStudentPage() {
             {editId ? "Edit Student" : "Register New Student"}
           </h2>
           <form onSubmit={handleSubmit} className="space-y-4">
+            <Input
+              placeholder="Student ID"
+              value={formData.id}
+              onChange={(e) => setFormData({ ...formData, id: e.target.value })}
+              required
+            />
             
           </form>
         </div>
