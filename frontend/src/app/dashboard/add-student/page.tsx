@@ -27,4 +27,32 @@ export default function AddStudentPage() {
     setStudents(res.data);
   };
 
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    try {
+      if (editId) {
+        const payload: any = {
+            id: formData.id,
+            name: formData.name,
+        };
+        if (formData.password.trim()) {
+            payload.password = formData.password;
+        }
+
+        await axios.put(`http://localhost:8000/update-user/${editId}`, payload);
+      } else {
+        await axios.post("http://localhost:8000/register-user", {
+          ...formData,
+          role: "student",
+        });
+      }
+      setFormData({ id: "", name: "", password: "" });
+      setEditId(null);
+      setMode("table");
+      fetchStudents();
+    } catch (err) {
+      console.error("❌ Submit failed", err);
+    }
+  };
+
 }
