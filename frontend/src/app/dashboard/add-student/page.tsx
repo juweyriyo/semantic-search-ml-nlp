@@ -127,6 +127,9 @@ export default function AddStudentPage() {
 
       {mode === "form" && (
         <div className="max-w-md mx-auto mt-10 bg-white p-6 rounded shadow space-y-4">
+          <h2 className="text-2xl font-semibold mb-4">
+            {editId ? "Edit Student" : "Register New Student"}
+          </h2>
           
         </div>
       )}
