@@ -12,5 +12,10 @@ type User = {
 };
 
 export default function AddStudentPage() {
-  
+  const [students, setStudents] = useState<User[]>([]);
+  const [formData, setFormData] = useState({ id: "", name: "", password: "" });
+  const [search, setSearch] = useState("");
+  const [editId, setEditId] = useState<string | null>(null);
+  const [mode, setMode] = useState<"table" | "form">("table");
+
 }
