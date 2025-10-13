@@ -61,4 +61,10 @@ export default function AddStudentPage() {
     setMode("form");
   };
 
+  const handleDelete = async (id: string) => {
+    if (!confirm("Are you sure to delete this student?")) return;
+    await axios.delete(`http://localhost:8000/delete-user/${id}`);
+    fetchStudents();
+  };
+
 }
