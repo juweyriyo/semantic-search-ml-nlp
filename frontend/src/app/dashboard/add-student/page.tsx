@@ -74,4 +74,9 @@ export default function AddStudentPage() {
       u.ID.toLowerCase().includes(search.toLowerCase())
     );
 
+  return (
+    <div className="space-y-6">
+      
+    </div>
+  );
 }
