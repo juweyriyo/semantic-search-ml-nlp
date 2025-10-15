@@ -24,4 +24,11 @@ export default function CategoryAnalyticsPage() {
   const categoryOptions = allCategories.map(cat => ({ value: cat, label: cat }));
   const yearOptions = allYears.map(year => ({ value: year, label: year.toString() }));
 
+  const handleFilter = () => setShowResult(true);
+  const handleReset = () => {
+    setSelectedCategories([]);
+    setSelectedYears([]);
+    setShowResult(false);
+  };
+
 }
