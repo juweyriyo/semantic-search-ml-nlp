@@ -35,6 +35,17 @@ export default function CategoryAnalyticsPage() {
     <div className="p-8 space-y-6">
       <h1 className="text-2xl font-bold text-gray-800"> Category Analytics</h1>
 
+      {/* Top 3 */}
+      <div className="grid grid-cols-3 gap-4">
+        {top3.map((item: any, i) => (
+          <div key={i} className="bg-white p-4 rounded shadow text-center">
+            <h3 className="text-lg font-semibold">Top {i + 1}</h3>
+            <p className="text-3xl font-bold text-indigo-600">{item.count}</p>
+            <p className="text-gray-600">{item.category}</p>
+          </div>
+        ))}
+      </div>
+
     </div>
   );
 }
