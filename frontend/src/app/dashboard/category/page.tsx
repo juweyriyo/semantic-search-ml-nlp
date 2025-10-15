@@ -46,6 +46,32 @@ export default function CategoryAnalyticsPage() {
         ))}
       </div>
 
+      {/* Filters */}
+      <div className="grid grid-cols-2 gap-4">
+        <div>
+          <label className="block text-sm font-medium mb-1">Select Category</label>
+          <Select
+            isMulti
+            options={categoryOptions}
+            value={categoryOptions.filter(opt => selectedCategories.includes(opt.value))}
+            onChange={(selected) => setSelectedCategories(selected.map(opt => opt.value))}
+            placeholder="Select Category..."
+            className="text-black"
+          />
+        </div>
+        <div>
+          <label className="block text-sm font-medium mb-1">Select Year</label>
+          <Select
+            isMulti
+            options={yearOptions}
+            value={yearOptions.filter(opt => selectedYears.includes(opt.value))}
+            onChange={(selected) => setSelectedYears(selected.map(opt => opt.value))}
+            placeholder="Select Year..."
+            className="text-black"
+          />
+        </div>
+      </div>
+
     </div>
   );
 }
