@@ -88,6 +88,28 @@ export default function CategoryAnalyticsPage() {
         </button>
       </div>
 
+      {/* Charts */}
+      {!showResult && (
+        <div>
+          <h2 className="text-lg font-semibold mt-6">🥧 Overall Category Distribution</h2>
+          <Pie
+            data={{
+              labels: allCategories,
+              datasets: [
+                {
+                  data: allCategories.map(
+                    cat => data.filter(d => d.category === cat).length
+                  ),
+                  backgroundColor: allCategories.map(
+                    () => "#" + Math.floor(Math.random() * 16777215).toString(16)
+                  ),
+                },
+              ],
+            }}
+          />
+        </div>
+      )}
+
     </div>
   );
 }
