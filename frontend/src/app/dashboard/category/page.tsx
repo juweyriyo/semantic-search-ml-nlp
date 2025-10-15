@@ -13,4 +13,9 @@ export default function CategoryAnalyticsPage() {
   const [selectedYears, setSelectedYears] = useState<number[]>([]);
   const [showResult, setShowResult] = useState(false);
 
+  useEffect(() => {
+    getTopCategories().then(setTop3);
+    getAllCategoryData().then(setData);
+  }, []);
+
 }
