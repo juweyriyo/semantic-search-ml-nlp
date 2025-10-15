@@ -18,4 +18,10 @@ export default function CategoryAnalyticsPage() {
     getAllCategoryData().then(setData);
   }, []);
 
+  const allCategories = [...new Set(data.map(d => d.category))];
+  const allYears = [...new Set(data.map(d => d.year))].sort((a, b) => a - b);
+
+  const categoryOptions = allCategories.map(cat => ({ value: cat, label: cat }));
+  const yearOptions = allYears.map(year => ({ value: year, label: year.toString() }));
+
 }
