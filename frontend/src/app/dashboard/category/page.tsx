@@ -31,4 +31,10 @@ export default function CategoryAnalyticsPage() {
     setShowResult(false);
   };
 
+  return (
+    <div className="p-8 space-y-6">
+      <h1 className="text-2xl font-bold text-gray-800"> Category Analytics</h1>
+
+    </div>
+  );
 }
