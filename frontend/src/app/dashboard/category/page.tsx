@@ -110,6 +110,52 @@ export default function CategoryAnalyticsPage() {
         </div>
       )}
 
+      {showResult && selectedCategories.length && selectedYears.length ? (
+        selectedCategories.length === 1 ? (
+          <Line
+            data={{
+              labels: selectedYears,
+              datasets: [
+                {
+                  label: selectedCategories[0],
+                  data: selectedYears.map(
+                    year =>
+                      data.filter(
+                        d =>
+                          d.category === selectedCategories[0] &&
+                          d.year === year
+                      ).length
+                  ),
+                  fill: false,
+                  borderColor: "blue",
+                  tension: 0.1,
+                },
+              ],
+            }}
+          />
+        ) : (
+          <Bar
+            data={{
+              labels: selectedYears,
+              datasets: selectedCategories.map(cat => ({
+                label: cat,
+                data: selectedYears.map(
+                  year =>
+                    data.filter(
+                      d => d.category === cat && d.year === year
+                    ).length
+                ),
+              })),
+            }}
+          />
+        )
+      ) : (
+        showResult && (
+          <p className="text-sm text-gray-600 mt-4">
+            💡 Please select both category and year.
+          </p>
+        )
+      )}
     </div>
   );
 }
