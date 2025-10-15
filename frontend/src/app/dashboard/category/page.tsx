@@ -72,6 +72,22 @@ export default function CategoryAnalyticsPage() {
         </div>
       </div>
 
+      {/* Buttons */}
+      <div className="flex gap-4 mt-2">
+        <button
+          onClick={handleFilter}
+          className="bg-indigo-600 text-white px-4 py-2 rounded"
+        >
+          Show Result
+        </button>
+        <button
+          onClick={handleReset}
+          className="bg-gray-300 text-black px-4 py-2 rounded"
+        >
+          🔄 Reset
+        </button>
+      </div>
+
     </div>
   );
 }
