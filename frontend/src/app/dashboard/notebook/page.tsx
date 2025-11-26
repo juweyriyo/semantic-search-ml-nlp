@@ -13,5 +13,9 @@ type Note = {
 };
 
 export default function NotebookPage() {
+  const [notes, setNotes] = useState<Note[]>([]);
+  const [newNote, setNewNote] = useState("");
+  const [editingNote, setEditingNote] = useState<{ [key: string]: string }>({});
+  const [userId] = useState("C1210258"); // replace with session later
 
 }
