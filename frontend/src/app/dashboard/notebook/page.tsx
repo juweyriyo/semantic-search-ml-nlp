@@ -18,4 +18,13 @@ export default function NotebookPage() {
   const [editingNote, setEditingNote] = useState<{ [key: string]: string }>({});
   const [userId] = useState("C1210258"); // replace with session later
 
+  const fetchNotes = async () => {
+    const data = await getNotes(userId);
+    setNotes(data);
+  };
+
+  useEffect(() => {
+    fetchNotes();
+  }, []);
+
 }
