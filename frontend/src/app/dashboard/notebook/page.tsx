@@ -11,3 +11,7 @@ type Note = {
   note: string;
   timestamp: string;
 };
+
+export default function NotebookPage() {
+
+}
