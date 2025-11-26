@@ -43,4 +43,9 @@ export default function NotebookPage() {
     fetchNotes();
   };
 
+  const handleDelete = async (id: string) => {
+    await deleteNote(id);
+    fetchNotes();
+  };
+
 }
