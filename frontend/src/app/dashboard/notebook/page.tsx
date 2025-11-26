@@ -27,4 +27,13 @@ export default function NotebookPage() {
     fetchNotes();
   }, []);
 
+  const handleCreate = async () => {
+    if (!newNote.trim()) return;
+    await createNote(userId, newNote);
+    console.log("wa clic garesay");
+
+    setNewNote("");
+    fetchNotes();
+  };
+
 }
