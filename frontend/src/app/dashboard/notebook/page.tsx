@@ -36,4 +36,11 @@ export default function NotebookPage() {
     fetchNotes();
   };
 
+  const handleUpdate = async (id: string) => {
+    if (!editingNote[id]) return;
+    await updateNote(id, editingNote[id]);
+    setEditingNote({ ...editingNote, [id]: "" });
+    fetchNotes();
+  };
+
 }
