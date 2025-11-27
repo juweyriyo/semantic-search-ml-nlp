@@ -53,4 +53,15 @@ export default function GraduatesPage() {
     }
   };
 
+  const handleEdit = (grad: Graduate) => {
+    setFormData({
+      student_id: grad.student_id,
+      name: grad.name,
+      department: grad.department,
+      graduation_year: grad.graduation_year,
+    });
+    setEditId(grad._id || null);
+    setShowForm(true);
+  };
+
 }
