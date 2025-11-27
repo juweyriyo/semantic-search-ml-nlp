@@ -85,4 +85,10 @@ export default function GraduatesPage() {
     setShowForm(false);
   };
 
+  const filteredGraduates = graduates.filter(
+    (grad) =>
+      grad.department.toLowerCase().includes(search.toLowerCase()) ||
+      grad.graduation_year.toString().includes(search)
+  );
+
 }
