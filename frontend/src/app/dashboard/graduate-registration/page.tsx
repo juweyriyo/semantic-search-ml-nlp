@@ -25,4 +25,17 @@ export default function GraduatesPage() {
   const [showForm, setShowForm] = useState(false);
   const [search, setSearch] = useState("");
 
+  useEffect(() => {
+    fetchGraduates();
+  }, []);
+
+  const fetchGraduates = async () => {
+    try {
+      const res = await axios.get("http://localhost:8000/graduates");
+      setGraduates(res.data);
+    } catch (err) {
+      console.error("Error fetching graduates", err);
+    }
+  };
+
 }
