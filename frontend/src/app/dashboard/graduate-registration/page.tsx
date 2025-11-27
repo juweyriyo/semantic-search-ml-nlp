@@ -74,4 +74,15 @@ export default function GraduatesPage() {
     }
   };
 
+  const resetForm = () => {
+    setFormData({
+      student_id: "",
+      name: "",
+      department: "",
+      graduation_year: new Date().getFullYear(),
+    });
+    setEditId(null);
+    setShowForm(false);
+  };
+
 }
