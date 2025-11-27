@@ -12,3 +12,7 @@ type Graduate = {
   department: string;
   graduation_year: number;
 };
+
+export default function GraduatesPage() {
+
+}
