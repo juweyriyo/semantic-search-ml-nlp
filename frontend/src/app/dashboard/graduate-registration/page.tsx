@@ -38,4 +38,19 @@ export default function GraduatesPage() {
     }
   };
 
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    try {
+      if (editId) {
+        await axios.put(`http://localhost:8000/update-graduate/${editId}`, formData);
+      } else {
+        await axios.post("http://localhost:8000/register-graduate", formData);
+      }
+      resetForm();
+      fetchGraduates();
+    } catch (err) {
+      console.error("Error submitting graduate", err);
+    }
+  };
+
 }
