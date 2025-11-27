@@ -64,4 +64,14 @@ export default function GraduatesPage() {
     setShowForm(true);
   };
 
+  const handleDelete = async (id?: string) => {
+    if (!id || !confirm("Are you sure you want to delete this graduate?")) return;
+    try {
+      await axios.delete(`http://localhost:8000/delete-graduate/${id}`);
+      fetchGraduates();
+    } catch (err) {
+      console.error("Error deleting graduate", err);
+    }
+  };
+
 }
