@@ -14,5 +14,15 @@ type Graduate = {
 };
 
 export default function GraduatesPage() {
+  const [graduates, setGraduates] = useState<Graduate[]>([]);
+  const [formData, setFormData] = useState<Graduate>({
+    student_id: "",
+    name: "",
+    department: "",
+    graduation_year: new Date().getFullYear(),
+  });
+  const [editId, setEditId] = useState<string | null>(null);
+  const [showForm, setShowForm] = useState(false);
+  const [search, setSearch] = useState("");
 
 }
