@@ -10,3 +10,7 @@ interface ReportRow {
   category: string;
   year: number;
 }
+
+export default function ReportPage() {
+
+}
