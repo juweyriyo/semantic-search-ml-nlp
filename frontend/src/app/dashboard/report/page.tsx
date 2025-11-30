@@ -72,4 +72,8 @@ export default function ReportPage() {
     document.body.removeChild(link);
   };
 
+  if (loading) {
+    return <p className="p-4">⏳ Loading report...</p>;
+  }
+
 }
