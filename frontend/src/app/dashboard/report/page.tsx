@@ -36,5 +36,22 @@ export default function ReportPage() {
       });
   }, []);
 
+  const handleSearch = (term: string) => {
+    setSearchTerm(term);
+    const lower = term.toLowerCase();
+    const filtered = data.filter(
+      (item) =>
+        item.id.toLowerCase().includes(lower) ||
+        item.title.toLowerCase().includes(lower) ||
+        item.category.toLowerCase().includes(lower) ||
+        item.year.toString().includes(lower)
+    );
+    const sortedFiltered = filtered.sort((a, b) => {
+      const numA = parseInt(a.id.replace(/\D/g, ""));
+      const numB = parseInt(b.id.replace(/\D/g, ""));
+      return numA - numB;
+    });
+    setFilteredData(sortedFiltered);
+  };
 
 }
