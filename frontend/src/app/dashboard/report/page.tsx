@@ -12,5 +12,10 @@ interface ReportRow {
 }
 
 export default function ReportPage() {
+  const [data, setData] = useState<ReportRow[]>([]);
+  const [filteredData, setFilteredData] = useState<ReportRow[]>([]);
+  const [searchTerm, setSearchTerm] = useState("");
+  const [loading, setLoading] = useState(true);
+
 
 }
