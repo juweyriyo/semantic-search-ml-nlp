@@ -54,4 +54,22 @@ export default function ReportPage() {
     setFilteredData(sortedFiltered);
   };
 
+  const downloadCSV = () => {
+    const csv = [
+      ["ID", "Project Title", "Category", "Graduation Year"],
+      ...filteredData.map((row) => [row.id, row.title, row.category, row.year]),
+    ]
+      .map((row) => row.join(","))
+      .join("\n");
+
+    const blob = new Blob([csv], { type: "text/csv" });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement("a");
+    link.href = url;
+    link.download = "semantic_report.csv";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
 }
