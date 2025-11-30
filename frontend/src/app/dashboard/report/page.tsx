@@ -17,5 +17,24 @@ export default function ReportPage() {
   const [searchTerm, setSearchTerm] = useState("");
   const [loading, setLoading] = useState(true);
 
+  useEffect(() => {
+    fetch("http://localhost:8000/api/report")
+      .then((res) => res.json())
+      .then((data) => {
+        const sorted = data.sort((a: ReportRow, b: ReportRow) => {
+          const numA = parseInt(a.id.replace(/\D/g, ""));
+          const numB = parseInt(b.id.replace(/\D/g, ""));
+          return numA - numB;
+        });
+        setData(sorted);
+        setFilteredData(sorted);
+        setLoading(false);
+      })
+      .catch((err) => {
+        console.error("Failed to fetch report data:", err);
+        setLoading(false);
+      });
+  }, []);
+
 
 }
