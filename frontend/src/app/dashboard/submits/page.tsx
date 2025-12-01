@@ -14,4 +14,11 @@ export default function StudentSubmissionsPage() {
   const [loading, setLoading] = useState(true);
   const [selectedGroup, setSelectedGroup] = useState<string | null>(null);
 
+  useEffect(() => {
+    fetchAllSubmissions().then((data) => {
+      setGroups(data || {});
+      setLoading(false);
+    });
+  }, []);
+
 }
