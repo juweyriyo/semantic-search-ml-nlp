@@ -33,4 +33,6 @@ export default function StudentSubmissionsPage() {
   };
 
 
+  if (loading) return <p className="p-4">⏳ Loading submissions...</p>;
+
 }
