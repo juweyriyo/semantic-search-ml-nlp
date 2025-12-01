@@ -10,5 +10,8 @@ import { BsListCheck } from "react-icons/bs";
 import { FaUserGraduate, FaUsers, FaChalkboardTeacher } from "react-icons/fa";
 
 export default function StudentSubmissionsPage() {
+  const [groups, setGroups] = useState<any>({});
+  const [loading, setLoading] = useState(true);
+  const [selectedGroup, setSelectedGroup] = useState<string | null>(null);
 
 }
