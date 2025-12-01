@@ -21,4 +21,16 @@ export default function StudentSubmissionsPage() {
     });
   }, []);
 
+  const handleAccept = async (group_id: string) => {
+    try {
+      console.log("ID🙄🙄🙄🙄", group_id);
+      await acceptSubmission(group_id);
+      const updated = await fetchAllSubmissions();
+      setGroups(updated);
+    } catch (err: any) {
+      console.error("❌ Accept failed:", err.message);
+    }
+  };
+
+
 }
