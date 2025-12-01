@@ -8,3 +8,7 @@ import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import { BsListCheck } from "react-icons/bs";
 import { FaUserGraduate, FaUsers, FaChalkboardTeacher } from "react-icons/fa";
+
+export default function StudentSubmissionsPage() {
+
+}
