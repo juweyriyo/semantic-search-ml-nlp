@@ -140,7 +140,11 @@ Manage registered students
 View analytics & reports
 ## 📸 Screenshots
 ## 1. Public Website – Home, About, Features, Login
-<img src="https://github.com/user-attachments/assets/5f7fca6a-f4a7-48f6-8276-e5561ef5a406" width="180" height="150"/> <img src="https://github.com/user-attachments/assets/c516a9a8-7ddd-4d5e-8f9b-ea7c4156f6f9" width="180" height="120"/>
+<img src="https://github.com/user-attachments/assets/5f7fca6a-f4a7-48f6-8276-e5561ef5a406" width="200" height="150"/> <img src="https://github.com/user-attachments/assets/c516a9a8-7ddd-4d5e-8f9b-ea7c4156f6f9" width="200" height="120"/> <img src="https://github.com/user-attachments/assets/281ce282-2318-469d-8792-fd903d63b7bb" width="200"/> <img src="https://github.com/user-attachments/assets/79a433bd-e8c6-4dfc-8412-07cc1bd59a7b" width="200"/>
+
+
+
+
 
 
 
