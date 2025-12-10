@@ -8,3 +8,10 @@ import { getStudentSubmissions } from "@/lib/api";
 import { FaCheckCircle, FaClock, FaTimesCircle } from "react-icons/fa";
 import { MdOutlineTopic } from "react-icons/md";
 import { jwtDecode } from "jwt-decode";
+
+// Define interface for each submission
+interface Submission {
+  title: string;
+  area: string;
+  status?: "accepted" | "pending" | "rejected";
+}
