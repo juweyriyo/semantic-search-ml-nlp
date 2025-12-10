@@ -152,11 +152,13 @@ View analytics & reports
   
 <img src="https://github.com/user-attachments/assets/2dd8edcf-6838-40cf-904f-509a26e9bc75" width="300"/> <img src="https://github.com/user-attachments/assets/c159a1f0-3041-4278-b464-c0741365e799" width="200"/> <img src="https://github.com/user-attachments/assets/749c27b9-e020-4982-b74f-2acb7cf4b1ff" width="200"/>
 
- - TESTING THE MODEL
+## TESTING THE MODEL
 
 <img src="https://github.com/user-attachments/assets/735f72cc-eb40-43c9-b19e-a996e48fdbb1" width="250"/> <img src="https://github.com/user-attachments/assets/9135789c-b797-45d3-afba-e10362197ec8" width="250"/> <img src="https://github.com/user-attachments/assets/43447fc4-0b79-4ab3-b447-969ff81f8cb0" width="300"/>
 
  - Semantic Search (No Match Found): Project Registration in 3 steps
+
+   
 <img src="https://github.com/user-attachments/assets/51ff7b72-7ddf-46d1-883b-f16332e1ae1f" width="200"/> <img src="https://github.com/user-attachments/assets/cda8c4ef-2ead-4fa9-845d-a6b2d3f1f163" width="200"/> <img src="https://github.com/user-attachments/assets/5c2d6303-7d55-4c08-9762-2d36828f0a34" width="200"/> <img src="https://github.com/user-attachments/assets/53f32943-506b-41db-a1b2-689aed41c503" width="350"/>
 
 
@@ -205,6 +207,7 @@ and the Faculty of Computer & Information Technology.
 ## 📄 License
 
 This project is for academic use only — © 2025 Jamhuriya University of Science and Technology (JUST).
+
 
 
 
