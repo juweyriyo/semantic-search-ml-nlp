@@ -25,5 +25,30 @@ export default function YourSubmissionsPage() {
   const [submissions, setSubmissions] = useState<Submission[]>([]);
   const [loading, setLoading] = useState(true);
 
+  useEffect(() => {
+    const fetchSubmissions = async () => {
+      try {
+        const token = localStorage.getItem("token");
+        if (!token) {
+          console.error("⛔ No token found");
+          return;
+        }
+
+        const decoded = jwtDecode<TokenPayload>(token);
+        const userId = decoded.user_id;
+
+        const data = await getStudentSubmissions(token); // Send token to backend
+        setSubmissions(data);
+      } catch (error) {
+        console.error("❌ Failed to fetch submissions:", error);
+        setSubmissions([]);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchSubmissions();
+  }, []);
+
 
 }
