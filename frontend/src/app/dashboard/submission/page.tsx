@@ -53,4 +53,12 @@ export default function YourSubmissionsPage() {
   if (loading)
     return <p className="p-6 text-blue-600">⏳ Loading your submissions...</p>;
 
+  if (submissions.length === 0) {
+    return (
+      <p className="p-6 text-orange-600 text-lg">
+        🚫 You haven't submitted any project titles yet.
+      </p>
+    );
+  }
+
 }
