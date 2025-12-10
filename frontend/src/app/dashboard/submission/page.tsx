@@ -50,5 +50,7 @@ export default function YourSubmissionsPage() {
     fetchSubmissions();
   }, []);
 
+  if (loading)
+    return <p className="p-6 text-blue-600">⏳ Loading your submissions...</p>;
 
 }
