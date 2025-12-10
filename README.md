@@ -150,7 +150,8 @@ View analytics & reports
 - Category Analytics Page:
 
   
-<img src="https://github.com/user-attachments/assets/2dd8edcf-6838-40cf-904f-509a26e9bc75" width="300"/> <img src="https://github.com/user-attachments/assets/c159a1f0-3041-4278-b464-c0741365e799" width="300"/> <img src="https://github.com/user-attachments/assets/749c27b9-e020-4982-b74f-2acb7cf4b1ff" width="300"/>
+<img src="https://github.com/user-attachments/assets/2dd8edcf-6838-40cf-904f-509a26e9bc75" width="300"/> <img src="https://github.com/user-attachments/assets/c159a1f0-3041-4278-b464-c0741365e799" width="200"/> <img src="https://github.com/user-attachments/assets/749c27b9-e020-4982-b74f-2acb7cf4b1ff" width="200"/>
+
 
 
 
