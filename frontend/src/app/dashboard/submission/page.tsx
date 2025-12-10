@@ -15,3 +15,8 @@ interface Submission {
   area: string;
   status?: "accepted" | "pending" | "rejected";
 }
+
+// Define expected structure from decoded JWT
+interface TokenPayload {
+  user_id: string;
+}
