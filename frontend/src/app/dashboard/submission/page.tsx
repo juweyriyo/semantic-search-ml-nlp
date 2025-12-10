@@ -22,5 +22,8 @@ interface TokenPayload {
 }
 
 export default function YourSubmissionsPage() {
+  const [submissions, setSubmissions] = useState<Submission[]>([]);
+  const [loading, setLoading] = useState(true);
+
 
 }
