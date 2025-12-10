@@ -65,4 +65,75 @@ export default function YourSubmissionsPage() {
   const pending = submissions.filter((s) => !s.status || s.status === "pending");
   const rejected = submissions.filter((s) => s.status === "rejected");
 
+  return (
+    <div className="p-6 max-w-4xl mx-auto">
+      <h1 className="text-2xl font-bold mb-6">📄 Your Submitted Titles</h1>
+
+      {/* ✅ Accepted Titles */}
+      {accepted.length > 0 && (
+        <div className="mb-6">
+          <h2 className="text-lg font-semibold text-green-700 flex items-center gap-2">
+            <FaCheckCircle className="text-green-600" /> Accepted Titles
+          </h2>
+          <Separator className="my-2" />
+          {accepted.map((item, idx) => (
+            <Card key={idx} className="p-4 mb-4 border-green-500 bg-green-50 shadow-sm">
+              <p>
+                <MdOutlineTopic className="inline mr-1" />{" "}
+                <strong>{item.title}</strong>
+              </p>
+              <p className="text-sm text-gray-700">📁 Area: {item.area}</p>
+              <Badge className="mt-2 bg-green-600 text-white">Accepted</Badge>
+            </Card>
+          ))}
+        </div>
+      )}
+
+      {/* ⏳ Pending Titles */}
+      {pending.length > 0 && (
+        <div className="mb-6">
+          <h2 className="text-lg font-semibold text-yellow-700 flex items-center gap-2">
+            <FaClock className="text-yellow-600" /> Pending Titles
+          </h2>
+          <Separator className="my-2" />
+          {pending.map((item, idx) => (
+            <Card
+              key={idx}
+              className="p-4 mb-4 border-yellow-400 bg-yellow-50 shadow-sm"
+            >
+              <p>
+                <MdOutlineTopic className="inline mr-1" />{" "}
+                <strong>{item.title}</strong>
+              </p>
+              <p className="text-sm text-gray-700">📁 Area: {item.area}</p>
+              <Badge className="mt-2 bg-yellow-600 text-white">Pending</Badge>
+            </Card>
+          ))}
+        </div>
+      )}
+
+      {/* ❌ Rejected Titles */}
+      {rejected.length > 0 && (
+        <div>
+          <h2 className="text-lg font-semibold text-red-700 flex items-center gap-2">
+            <FaTimesCircle className="text-red-600" /> Rejected Titles
+          </h2>
+          <Separator className="my-2" />
+          {rejected.map((item, idx) => (
+            <Card
+              key={idx}
+              className="p-4 mb-4 border-red-500 bg-red-50 shadow-sm"
+            >
+              <p>
+                <MdOutlineTopic className="inline mr-1" />{" "}
+                <strong>{item.title}</strong>
+              </p>
+              <p className="text-sm text-gray-700">📁 Area: {item.area}</p>
+              <Badge className="mt-2 bg-red-600 text-white">Rejected</Badge>
+            </Card>
+          ))}
+        </div>
+      )}
+    </div>
+  );
 }
