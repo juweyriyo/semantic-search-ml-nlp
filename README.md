@@ -28,7 +28,7 @@ This system supports **real-time title analysis**, **semantic recommendations**,
 
 ## 🧬 System Architecture
 The system follows a **client–server architecture**:
-<img width="763" height="832" alt="image" src="https://github.com/user-attachments/assets/d3591b06-f98a-4e6b-8c79-5dc81e3664c9" />
+<img width="763" height="832" alt="image" src="https://github.com/user-attachments/assets/d3591b06-f98a-4e6b-8c79-5dc81e3664c9" width="400"/>
 
 ## Frontend (Next.js) → FastAPI Backend → SBERT Model → MongoDB
 
@@ -138,4 +138,5 @@ Manage registered students
 
 View analytics & reports
 ## 📸 Screenshots
+
 
