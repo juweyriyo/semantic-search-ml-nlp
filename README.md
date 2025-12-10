@@ -139,7 +139,8 @@ Manage registered students
 
 View analytics & reports
 ## 📸 Screenshots
-<img width="881" height="400" width="350" alt="image" src="https://github.com/user-attachments/assets/5f7fca6a-f4a7-48f6-8276-e5561ef5a406" />
+<img src="https://github.com/user-attachments/assets/5f7fca6a-f4a7-48f6-8276-e5561ef5a406" width="180"/>
+
 
 
 
