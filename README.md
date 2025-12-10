@@ -92,9 +92,23 @@ Semantic search flow:
 ```bash
 git clone https://github.com/your-username/semantic-search-system.git
 cd semantic-search-system
-
+```
 ### 2️⃣ Backend Setup
+```bash
 cd backend
 pip install -r requirements.txt
 uvicorn main:app --reload
-
+```
+3️⃣ Frontend Setup
+```bash
+cd frontend
+npm install
+npm run dev
+```
+4️⃣ Environment Variables
+- Create .env files for both backend and frontend:
+```bash
+MONGO_URI=your_database_url
+SECRET_KEY=jwt_secret
+MODEL_NAME=sentence-transformers/all-MiniLM-L6-v2
+```
