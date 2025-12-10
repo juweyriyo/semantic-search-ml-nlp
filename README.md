@@ -152,6 +152,14 @@ View analytics & reports
   
 <img src="https://github.com/user-attachments/assets/2dd8edcf-6838-40cf-904f-509a26e9bc75" width="300"/> <img src="https://github.com/user-attachments/assets/c159a1f0-3041-4278-b464-c0741365e799" width="200"/> <img src="https://github.com/user-attachments/assets/749c27b9-e020-4982-b74f-2acb7cf4b1ff" width="200"/>
 
+### 3. TESTING THE MODEL
+
+<img src="https://github.com/user-attachments/assets/735f72cc-eb40-43c9-b19e-a996e48fdbb1" width="200"/> <img src="https://github.com/user-attachments/assets/9135789c-b797-45d3-afba-e10362197ec8" width="150"/> <img src="https://github.com/user-attachments/assets/43447fc4-0b79-4ab3-b447-969ff81f8cb0" width="300"/>
+
+
+
+
+
 
 
 
