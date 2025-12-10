@@ -142,6 +142,16 @@ View analytics & reports
 ### 1. Public Website – Home, About, Features, Login
 <img src="https://github.com/user-attachments/assets/5f7fca6a-f4a7-48f6-8276-e5561ef5a406" width="200" height="150"/> <img src="https://github.com/user-attachments/assets/c516a9a8-7ddd-4d5e-8f9b-ea7c4156f6f9" width="200" height="120"/> <img src="https://github.com/user-attachments/assets/281ce282-2318-469d-8792-fd903d63b7bb" width="200"/> <img src="https://github.com/user-attachments/assets/79a433bd-e8c6-4dfc-8412-07cc1bd59a7b" width="200"/> <img src="https://github.com/user-attachments/assets/98a6e881-c9ca-477d-a1cc-0d09e71528c8" width="200"/> <img src="https://github.com/user-attachments/assets/db7a5f4d-55df-4724-a7aa-1e85cd440e5c" width="200"/>
 
+### 2. User Dashboard
+ - Dashboard Page:
+<img src="https://github.com/user-attachments/assets/03b23ee8-e990-4d52-aac8-d1e18e28ff9f" width="300"/>
+- Category Analytics Page:
+<img src="https://github.com/user-attachments/assets/2dd8edcf-6838-40cf-904f-509a26e9bc75" width="200"/> <img src="https://github.com/user-attachments/assets/c159a1f0-3041-4278-b464-c0741365e799" width="200"/> <img src="https://github.com/user-attachments/assets/749c27b9-e020-4982-b74f-2acb7cf4b1ff" width="200"/>
+
+
+
+
+
 
 
 
