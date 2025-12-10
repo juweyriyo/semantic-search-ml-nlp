@@ -61,4 +61,8 @@ export default function YourSubmissionsPage() {
     );
   }
 
+  const accepted = submissions.filter((s) => s.status === "accepted");
+  const pending = submissions.filter((s) => !s.status || s.status === "pending");
+  const rejected = submissions.filter((s) => s.status === "rejected");
+
 }
