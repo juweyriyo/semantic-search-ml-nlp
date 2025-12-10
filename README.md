@@ -28,6 +28,7 @@ This system supports **real-time title analysis**, **semantic recommendations**,
 
 ## 🧬 System Architecture
 The system follows a **client–server architecture**:
+<img width="763" height="832" alt="image" src="https://github.com/user-attachments/assets/d3591b06-f98a-4e6b-8c79-5dc81e3664c9" />
 
 ## Frontend (Next.js) → FastAPI Backend → SBERT Model → MongoDB
 
@@ -99,16 +100,42 @@ cd backend
 pip install -r requirements.txt
 uvicorn main:app --reload
 ```
-3️⃣ Frontend Setup
+### 3️⃣ Frontend Setup
 ```bash
 cd frontend
 npm install
 npm run dev
 ```
-4️⃣ Environment Variables
+### 4️⃣ Environment Variables
 - Create .env files for both backend and frontend:
 ```bash
 MONGO_URI=your_database_url
 SECRET_KEY=jwt_secret
 MODEL_NAME=sentence-transformers/all-MiniLM-L6-v2
 ```
+## 📘 Usage
+🔍 Search for Similar Titles
+
+Go to Semantic Search Page
+
+Enter your project title
+
+View similarity score + suggested alternatives
+
+🎓 Submit a New Title
+
+Complete the 3-step form
+
+System checks duplicates
+
+Admin reviews & approves
+
+🔐 Admin Panel
+
+View all submissions
+
+Manage registered students
+
+View analytics & reports
+## 📸 Screenshots
+
