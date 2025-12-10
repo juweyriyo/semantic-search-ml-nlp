@@ -93,3 +93,8 @@ Semantic search flow:
 git clone https://github.com/your-username/semantic-search-system.git
 cd semantic-search-system
 
+### 2️⃣ Backend Setup
+cd backend
+pip install -r requirements.txt
+uvicorn main:app --reload
+
