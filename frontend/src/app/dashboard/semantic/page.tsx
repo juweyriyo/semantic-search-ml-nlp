@@ -48,4 +48,31 @@ export default function SemanticSearchPage() {
     }
   };
 
+  const handleFinalSubmit = async () => {
+    const payload = {
+      group_number: groupData.groupNumber,
+      supervisor: groupData.supervisor,
+      student_ids: groupData.studentIds,
+      title,
+      area: projectData.area,
+      year: projectData.graduationYear,
+    };
+
+    try {
+      setSubmitting(true);
+      await registerProject(payload);
+      toast.success("✅ Project registered successfully!");
+      setStep(0);
+      setGroupData({});
+      setProjectData({});
+      setTitle("");
+      setSearched(false);
+      setResults([]);
+    } catch (err: any) {
+      toast.error(`❌ ${err}`);
+    } finally {
+      setSubmitting(false);
+    }
+  };
+
 }
