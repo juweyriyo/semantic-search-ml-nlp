@@ -14,5 +14,9 @@ type Step2Props = {
 };
 
 export default function Step2_ProjectInfo({ data, onNext, onBack }: Step2Props) {
+  const [area, setArea] = useState("");
+  const [title, setTitle] = useState(data.title || "");
+  const [graduationYear, setGraduationYear] = useState<number | null>(null);
+
 
 }
