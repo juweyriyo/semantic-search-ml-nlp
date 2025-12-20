@@ -64,4 +64,10 @@ export default function Step1_GroupInfo({ onNext, setStep, setFormData, setError
     setStudentErrors(Array(size).fill(""));
   };
 
+  const handleStudentIdChange = (index: number, value: string) => {
+    const newIds = [...studentIds];
+    newIds[index] = value;
+    setStudentIds(newIds);
+  };
+
 }
