@@ -7,3 +7,18 @@ import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { checkGraduate, checkStudentGroup } from "@/lib/api";
 import clsx from "clsx";
+
+interface Step1Props {
+  onNext: (data: {
+    groupNumber: string;
+    supervisor: string;
+    studentIds: string[];
+    groupSize: number;
+  }) => void;
+  setStep: (step: number) => void;
+  setFormData: (data: any) => void;
+  formData: any;
+  setError: (msg: string) => void;
+  userId: string;
+}
+
