@@ -100,4 +100,22 @@ export default function Step1_GroupInfo({ onNext, setStep, setFormData, setError
     return allValid;
   };
 
+  const handleNext = async () => {
+    const newErrors: Record<string, string> = {};
+
+    if (!groupNumber.trim()) newErrors.groupNumber = "Group Number is required.";
+    if (!supervisor.trim()) newErrors.supervisor = "Supervisor is required.";
+    studentIds.forEach((id, idx) => {
+      if (!id.trim()) newErrors[`student-${idx}`] = "Student ID is required.";
+    });
+
+    setErrors(newErrors);
+    if (Object.keys(newErrors).length > 0) return;
+
+    const valid = await validateStudents();
+    if (!valid) return;
+
+    onNext({ groupNumber, supervisor, studentIds, groupSize });
+  };
+
 }
