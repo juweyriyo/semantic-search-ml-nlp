@@ -15,5 +15,20 @@ import Cookies from "js-cookie";
 import { parseJwt } from "@/lib/jwt";
 
 export default function SemanticSearchPage() {
+  const [title, setTitle] = useState("");
+  const [threshold, setThreshold] = useState(0.55);
+  const [results, setResults] = useState<any[]>([]);
+  const [matchFound, setMatchFound] = useState(false);
+  const [maxScore, setMaxScore] = useState(0.55);
+  const [searched, setSearched] = useState(false);
+  const [titleAccepted, setTitleAccepted] = useState(false);
+  const [step, setStep] = useState(0);
+  const [groupData, setGroupData] = useState<any>({});
+  const [projectData, setProjectData] = useState<any>({});
+  const [submitting, setSubmitting] = useState(false);
+  const [error, setError] = useState("");
+
+  const token = Cookies.get("token");
+  const { user_id: userId } = token ? parseJwt(token) : { user_id: null };
 
 }
