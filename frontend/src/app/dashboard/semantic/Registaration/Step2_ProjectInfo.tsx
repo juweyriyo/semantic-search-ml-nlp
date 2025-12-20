@@ -35,5 +35,33 @@ export default function Step2_ProjectInfo({ data, onNext, onBack }: Step2Props) 
     onNext({ title, area, graduationYear });
   };
 
+  return (
+    <div className="space-y-6">
+      <h2 className="text-2xl font-bold text-gray-800">📑 Project Information</h2>
 
+      <div className="space-y-2">
+        <Label>Project Title</Label>
+        <Input value={title} disabled />
+      </div>
+
+      <div className="space-y-2">
+        <Label>Area / Category</Label>
+        <Input value={area} onChange={(e) => setArea(e.target.value)} />
+      </div>
+
+      <div className="space-y-2">
+        <Label>Graduation Year</Label>
+        <Input value={graduationYear?.toString()} disabled />
+      </div>
+
+      <div className="flex justify-between pt-4">
+        <Button variant="secondary" onClick={onBack}>
+          ⬅️ Back
+        </Button>
+        <Button onClick={handleNext}>
+          Next ➡️
+        </Button>
+      </div>
+    </div>
+  );
 }
