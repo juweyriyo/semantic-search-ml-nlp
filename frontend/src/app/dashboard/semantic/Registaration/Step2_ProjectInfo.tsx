@@ -12,3 +12,7 @@ type Step2Props = {
   onNext: (data: { title: string; area: string; graduationYear: number }) => void;
   onBack: () => void;
 };
+
+export default function Step2_ProjectInfo({ data, onNext, onBack }: Step2Props) {
+
+}
