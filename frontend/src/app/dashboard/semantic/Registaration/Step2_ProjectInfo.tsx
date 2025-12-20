@@ -18,5 +18,14 @@ export default function Step2_ProjectInfo({ data, onNext, onBack }: Step2Props) 
   const [title, setTitle] = useState(data.title || "");
   const [graduationYear, setGraduationYear] = useState<number | null>(null);
 
+  useEffect(() => {
+    const firstId = data.studentIds[0];
+    const match = firstId.match(/C1(\d{2})/);
+    if (match) {
+      const regYear = 2000 + parseInt(match[1]);
+      setGraduationYear(regYear + 4);
+    }
+  }, [data.studentIds]);
+
 
 }
