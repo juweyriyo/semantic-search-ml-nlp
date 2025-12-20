@@ -118,4 +118,73 @@ export default function Step1_GroupInfo({ onNext, setStep, setFormData, setError
     onNext({ groupNumber, supervisor, studentIds, groupSize });
   };
 
+  return (
+    <div className="space-y-6">
+      <h2 className="text-2xl font-bold text-gray-800"> Group Information</h2>
+
+      <div className="space-y-2">
+        <Label>Group Number</Label>
+        <Input
+          value={groupNumber}
+          onChange={(e) => setGroupNumber(e.target.value)}
+          className={clsx(errors.groupNumber && "border-red-500")}
+        />
+        {errors.groupNumber && (
+          <p className="text-red-500 text-sm">{errors.groupNumber}</p>
+        )}
+      </div>
+
+      <div className="space-y-2">
+        <Label>Supervisor</Label>
+        <Input
+          value={supervisor}
+          onChange={(e) => setSupervisor(e.target.value)}
+          className={clsx(errors.supervisor && "border-red-500")}
+        />
+        {errors.supervisor && (
+          <p className="text-red-500 text-sm">{errors.supervisor}</p>
+        )}
+      </div>
+
+      <div className="space-y-2">
+        <Label>Number of Students</Label>
+        <select
+          className="w-full border rounded px-3 py-2"
+          value={groupSize}
+          onChange={handleGroupSizeChange}
+        >
+          {[3, 4, 5].map((num) => (
+            <option key={num} value={num}>
+              {num}
+            </option>
+          ))}
+        </select>
+      </div>
+
+      <div className="space-y-3">
+        {studentIds.map((id, index) => (
+          <div key={index} className="space-y-1">
+            <Label>Student ID {index + 1}</Label>
+            <Input
+              value={id}
+              onChange={(e) => handleStudentIdChange(index, e.target.value)}
+              className={clsx(
+                errors[`student-${index}`] || studentErrors[index] ? "border-red-500" : ""
+              )}
+            />
+            {errors[`student-${index}`] && (
+              <p className="text-red-500 text-sm">{errors[`student-${index}`]}</p>
+            )}
+            {studentErrors[index] && (
+              <p className="text-red-500 text-sm">{studentErrors[index]}</p>
+            )}
+          </div>
+        ))}
+      </div>
+
+      <Button onClick={handleNext} className="mt-4">
+        Next ➡️
+      </Button>
+    </div>
+  );
 }
