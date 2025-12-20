@@ -70,4 +70,34 @@ export default function Step1_GroupInfo({ onNext, setStep, setFormData, setError
     setStudentIds(newIds);
   };
 
+  const validateStudents = async (): Promise<boolean> => {
+    const errors: string[] = Array(groupSize).fill("");
+    let allValid = true;
+
+    for (let i = 0; i < studentIds.length; i++) {
+      const sid = studentIds[i];
+
+      try {
+        const gradData = await checkGraduate(sid);
+        if (!gradData.eligible) {
+          errors[i] = `Not eligible for registration.`;
+          allValid = false;
+          continue;
+        }
+
+        const groupData = await checkStudentGroup(sid);
+        if (groupData.group_number) {
+          errors[i] = `Already in Group ${groupData.group_number}`;
+          allValid = false;
+        }
+      } catch (err) {
+        errors[i] = `Your Student ID was not found in this year's graduation list..`;
+        allValid = false;
+      }
+    }
+
+    setStudentErrors(errors);
+    return allValid;
+  };
+
 }
