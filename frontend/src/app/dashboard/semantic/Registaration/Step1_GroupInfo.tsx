@@ -22,3 +22,7 @@ interface Step1Props {
   userId: string;
 }
 
+
+export default function Step1_GroupInfo({ onNext, setStep, setFormData, setError, formData, userId }: Step1Props) {
+
+}
