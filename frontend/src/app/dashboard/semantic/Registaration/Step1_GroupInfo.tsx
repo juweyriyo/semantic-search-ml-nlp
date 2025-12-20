@@ -57,4 +57,11 @@ export default function Step1_GroupInfo({ onNext, setStep, setFormData, setError
     checkExistingSubmission();
   }, []);
 
+  const handleGroupSizeChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    const size = parseInt(e.target.value);
+    setGroupSize(size);
+    setStudentIds(Array(size).fill(""));
+    setStudentErrors(Array(size).fill(""));
+  };
+
 }
