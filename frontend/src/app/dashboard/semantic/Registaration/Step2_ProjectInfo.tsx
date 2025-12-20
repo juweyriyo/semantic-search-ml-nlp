@@ -27,5 +27,13 @@ export default function Step2_ProjectInfo({ data, onNext, onBack }: Step2Props) 
     }
   }, [data.studentIds]);
 
+  const handleNext = () => {
+    if (!area || !graduationYear) {
+      alert("Please enter the category.");
+      return;
+    }
+    onNext({ title, area, graduationYear });
+  };
+
 
 }
