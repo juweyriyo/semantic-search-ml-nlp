@@ -24,5 +24,12 @@ interface Step1Props {
 
 
 export default function Step1_GroupInfo({ onNext, setStep, setFormData, setError, formData, userId }: Step1Props) {
+  const [groupNumber, setGroupNumber] = useState("");
+  const [supervisor, setSupervisor] = useState("");
+  const [groupSize, setGroupSize] = useState(3);
+  const [studentIds, setStudentIds] = useState<string[]>(Array(3).fill(""));
+
+  const [errors, setErrors] = useState<Record<string, string>>({});
+  const [studentErrors, setStudentErrors] = useState<string[]>([]);
 
 }
