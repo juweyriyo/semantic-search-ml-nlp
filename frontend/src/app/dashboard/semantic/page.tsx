@@ -13,3 +13,7 @@ import Step3 from "./Registaration/Step3_Review";
 import { toast } from "sonner";
 import Cookies from "js-cookie";
 import { parseJwt } from "@/lib/jwt";
+
+export default function SemanticSearchPage() {
+
+}
