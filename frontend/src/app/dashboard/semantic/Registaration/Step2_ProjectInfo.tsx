@@ -3,3 +3,12 @@ import { useEffect, useState } from "react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
+
+type Step2Props = {
+  data: {
+    studentIds: string[];
+    title: string;
+  };
+  onNext: (data: { title: string; area: string; graduationYear: number }) => void;
+  onBack: () => void;
+};
